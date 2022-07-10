@@ -26,7 +26,7 @@ return [
     ],
 
     // Number of collection items to show per page
-    'perPage' => 7,
+    'perPage' => 10,
 
     // Number of links in the pagination section, should be a odd number greater than or equals to 3
     'paginatationLinkNumber' => 5,

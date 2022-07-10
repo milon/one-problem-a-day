@@ -149,3 +149,21 @@ ul {
     -webkit-columns: 2;
     -moz-columns: 2;
 }
+
+section#paginator {
+    display: flex;
+    justify-content: center;
+}
+
+section#paginator .selected {
+    font-weight: bold;
+    color: #c0c0c0;
+}
+
+section#paginator a,
+section#paginator span {
+    float: left;
+    padding: 5px;
+    margin: 0 6px;
+    text-decoration: none;
+}
