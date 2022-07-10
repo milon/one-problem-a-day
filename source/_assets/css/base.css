@@ -143,3 +143,9 @@ pre {
     @apply text-white;
     @apply bg-indigo-400;
 }
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
