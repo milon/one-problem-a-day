@@ -11,7 +11,7 @@ pagination:
     <p>Here is the list of categories of the problems-</p>
 
     <ul>
-        <li><a href="/categories/hashmap">Hashmap</a></li>
+        <li><a href="/categories/array-and-hashmap">Array & Hashmap</a></li>
         <li><a href="/categories/two-pointers">Two Pointers</a></li>
         <li><a href="/categories/sliding-window">Sliding Window</a></li>
         <li><a href="/categories/stack">Stack</a></li>

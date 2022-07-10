@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Two Sum
 date: 2022-07-10
-categories: [hashmap]
+categories: [array-and-hashmap]
 ---
 
 Problem URL: [Two Sum](https://leetcode.com/problems/two-sum/)
