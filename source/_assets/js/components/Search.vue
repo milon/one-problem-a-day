@@ -96,7 +96,7 @@ export default {
     created() {
         axios('/index.json').then(response => {
             this.fuse = new Fuse(response.data, {
-                minMatchCharLength: 6,
+                minMatchCharLength: 3,
                 keys: ['title', 'snippet', 'categories'],
             });
         });
