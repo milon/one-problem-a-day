@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://jigsaw-blog-template.tighten.co',
+    'baseUrl' => 'https://one-problem-a-day.netlify.app',
     'production' => true,
 ];

@@ -16,6 +16,7 @@ return [
         ],
         'categories' => [
             'path' => '/categories/{filename}',
+            'sort' => '-date',
             'posts' => function ($page, $allPosts) {
                 return $allPosts->filter(function ($post) use ($page) {
                     return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
@@ -23,6 +24,12 @@ return [
             },
         ],
     ],
+
+    // Number of collection items to show per page
+    'perPage' => 7,
+
+    // Number of links in the pagination section, should be a odd number greater than or equals to 3
+    'paginatationLinkNumber' => 5,
 
     // helpers
     'getDate' => function ($page) {
