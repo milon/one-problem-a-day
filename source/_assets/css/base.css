@@ -1,0 +1,145 @@
+body {
+    font-size: 17px;
+}
+
+a {
+    @apply font-semibold;
+    @apply no-underline;
+    @apply text-indigo-500;
+    @apply hover:text-indigo-700;
+}
+
+blockquote {
+    @apply pl-6;
+    @apply my-8;
+    @apply text-lg;
+    @apply font-normal;
+    @apply italic;
+    @apply text-gray-800;
+    @apply border-l-4;
+    @apply border-indigo-400;
+}
+
+code {
+    @apply px-2;
+    @apply py-px;
+    @apply text-sm;
+    @apply bg-gray-300;
+    @apply rounded;
+}
+
+code.hljs {
+    @apply p-0;
+    @apply bg-transparent;
+
+    & .hljs-comment,
+    & .hljs-keyword,
+    & .hljs-meta {
+        @apply font-normal;
+        @apply not-italic;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply mt-8;
+    @apply mb-4;
+    @apply text-gray-900;
+    @apply leading-tight;
+
+    &:first-child {
+        @apply mt-0;
+    }
+}
+
+h1 {
+    @apply text-5xl;
+    @apply font-extrabold;
+}
+
+h2 {
+    @apply text-4xl;
+    @apply font-bold;
+}
+
+h3 {
+    @apply text-3xl;
+    @apply font-bold;
+}
+
+h4 {
+    @apply text-2xl;
+    @apply font-normal;
+}
+
+h5 {
+    @apply text-xl;
+    @apply font-normal;
+}
+
+h6 {
+    @apply text-lg;
+    @apply font-light;
+}
+
+hr {
+    @apply my-12;
+    @apply border-b;
+    @apply border-indigo-200;
+    @apply rounded-full;
+}
+
+li {
+    & ul,
+    & ol {
+        @apply ml-8;
+        @apply my-0;
+    }
+}
+
+ol,
+ul {
+    @apply my-4;
+}
+
+ol {
+    @apply list-decimal;
+}
+
+ul {
+    @apply list-disc;
+}
+
+p {
+    @apply my-3;
+
+    @screen md {
+        @apply my-6;
+    }
+}
+
+pre {
+    @apply p-4;
+    @apply my-6;
+    @apply text-base;
+    @apply bg-gray-200;
+    @apply leading-loose;
+    @apply rounded;
+    @apply shadow;
+    @apply overflow-x-auto;
+
+    & code {
+        @apply block;
+        @apply p-0;
+        @apply bg-transparent;
+    }
+}
+
+::selection {
+    @apply text-white;
+    @apply bg-indigo-400;
+}
