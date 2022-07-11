@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Contains Duplicate
+title: Contains duplicate
 date: 2022-07-10
 categories: [array-and-hashmap]
 ---
