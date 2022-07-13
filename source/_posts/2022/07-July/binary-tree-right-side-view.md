@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Binary tree right side view
+problemUrl: https://leetcode.com/problems/binary-tree-right-side-view/
 date: 2022-07-11
 categories: [tree]
 ---
-
-Problem URL: [Binary tree right side view](https://leetcode.com/problems/binary-tree-right-side-view/)
 
 This problem asked us to return the list of the nodes when we look it from the right side. That means, if we traverse the whole tree with BFS, we will see the right side node of the tree in each level. So we can just traverse the tree with BFS and at the end of each level of traverse, we will store the last value on our result list. Then when the whole tree traverse is done, we can just return it.
 

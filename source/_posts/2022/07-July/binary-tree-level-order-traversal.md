@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Binary tree level order traversal
+problemUrl: https://leetcode.com/problems/binary-tree-level-order-traversal/
 date: 2022-07-13
 categories: [tree]
 ---
-
-Problem URL: [Binary tree level order traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
 This is a classing BFS problem. We should traverse the whole tree with BFS, and store the values level by level to a list. Then combine each level to a list and return.
 

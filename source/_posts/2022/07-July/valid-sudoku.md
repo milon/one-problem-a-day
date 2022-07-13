@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Valid sudoku
+problemUrl: https://leetcode.com/problems/valid-sudoku/
 date: 2022-07-13
 categories: [array-and-hashmap]
 ---
-
-Problem URL: [Valid sudoku](https://leetcode.com/problems/valid-sudoku/)
 
 We can use 3 hashmap to store the values of rows, colums and square. For rows and columns hashmap we will use the row and column number as key. For square hashmap, we can use the integer division of the row, column value by 3, and use the set as key. For example, row 5 and column 4 value will be stored as `(row//3, column//3)` key in the hashmap. If we already have the value stored in the hashmap, then we return false immediately. If we can traverse through the whole grid without any duplicate, that mean the sudoku is valid and we return true.
 

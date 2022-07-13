@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Valid anagram
+problemUrl: https://leetcode.com/problems/valid-anagram/
 date: 2022-07-12
 categories: [array-and-hashmap]
 ---
-
-Problem URL: [Valid anagram](https://leetcode.com/problems/valid-anagram/)
 
 We can split both string to characters, sort and then compare each characters at every position. If we don't find any match, we return False. After comparing every character, we will return True.
 

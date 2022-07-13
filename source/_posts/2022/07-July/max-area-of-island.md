@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Max area of island
+problemUrl: https://leetcode.com/problems/max-area-of-island/
 date: 2022-07-11
 categories: [graph]
 ---
-
-Problem URL: [Max area of island](https://leetcode.com/problems/max-area-of-island/)
 
 This is a classing grid graph problem. We will iterate through each row and column, when we find a new land, we will then expand the area of land sorrounding. We can use BFS or DFS to do that. I will go with DFS as it's a bit easier to write. Then we will return the number of land from that DFS method. While going through the grid, we will keep track of the maximum land area, and after iterating the whole grid, we will return the maximum area.
 

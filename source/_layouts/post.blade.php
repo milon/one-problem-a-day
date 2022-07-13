@@ -24,6 +24,7 @@
     @endif
 
     <div class="border-b border-indigo-200 mb-10 pb-4" v-pre>
+        <p class="font-semibold">Problem URL: <a target="_blank" href="{{ $page->problemUrl }}">{{ $page->title }}</a></p>
         @yield('content')
     </div>
 

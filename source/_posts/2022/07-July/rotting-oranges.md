@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Rotting oranges
+problemUrl: https://leetcode.com/problems/rotting-oranges/
 date: 2022-07-12
 categories: [graph]
 ---
-
-Problem URL: [Rotting oranges](https://leetcode.com/problems/rotting-oranges/)
 
 This is a BFS problem. We have to count the number of steps as minutes to return. If we can't traverse the whole grid, then we will return -1. Only tricky part is we can have multiple rotten oranges in the grid at the very beginning. So, we can go through the whole grid, and add all the rotten oranges in our queue. In the process, we will also count the fresh oranges. Then while traversing, we will decrease the number of fresh oranges one by one. When our traverse is done, if we have fresh oranges left, we will return -1, or we will return the time.
 

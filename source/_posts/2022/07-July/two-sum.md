@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Two sum
+problemUrl: https://leetcode.com/problems/two-sum/
 date: 2022-07-10
 categories: [array-and-hashmap]
 ---
-
-Problem URL: [Two Sum](https://leetcode.com/problems/two-sum/)
 
 This problem has very clear statement. It will have a list of integer and a target integer. We should return the 2 indeces of the numbers that adds up to the target. It is guranteed that we will have a solution and it would be unique.
 

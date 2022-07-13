@@ -2,11 +2,10 @@
 extends: _layouts.post
 section: content
 title: Top k frequent element
+problemUrl: https://leetcode.com/problems/top-k-frequent-elements/
 date: 2022-07-12
 categories: [array-and-hashmap]
 ---
-
-Problem URL: [Top k frequent element](https://leetcode.com/problems/top-k-frequent-elements/)
 
 We will count the frequency of each element and store it in a hashmap, where the number itself will be the key and frequency will be the value. Then we sort the elements of the hashmap and get the keys as a list. Then we return first k elements of the list.
 
