@@ -20,5 +20,5 @@ def containsDuplicate(self, nums: List[int]) -> bool:
     return False
 ```
 
-Time Complexity: O(n) <br/>
-Space Complexity: O(n)
+Time Complexity: `O(n)` <br/>
+Space Complexity: `O(n)`
