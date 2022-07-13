@@ -40,7 +40,6 @@ class Solution:
                     q.appendleft(current.right)
             res.append(currentLevelVal)
         return res
-
 ```
 
 This is very efficient. Both the time and space complexity of this problem is `O(n)`.
