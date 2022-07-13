@@ -60,7 +60,7 @@
             class="flex md:hidden bg-gray-100 hover:bg-indigo-100 justify-center items-center border border-gray-500 rounded-full focus:outline-none h-10 px-3"
             @click.prevent="showInput"
         >
-            <img src="/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
+            <img src="/assets/images/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
         </button>
     </div>
 </template>
@@ -106,7 +106,7 @@ export default {
 
 <style>
 input[name='search'] {
-    background-image: url('/assets/img/magnifying-glass.svg');
+    background-image: url('/assets/images/magnifying-glass.svg');
     background-position: 0.8em;
     background-repeat: no-repeat;
     border-radius: 25px;
