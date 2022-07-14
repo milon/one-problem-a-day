@@ -25,8 +25,7 @@ class Solution:
             return True
         if p and q and p.val == q.val:
             return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
-        else:
-            return False
+        return False
 ```
 
 We are traversing the thee once, so time complexity is `O(n)`. The call stack of the recursion can also store the whole tree in worst case scenerio, so the space complexity will also be `O(n)`.
