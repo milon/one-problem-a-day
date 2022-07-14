@@ -1,7 +1,7 @@
 @extends('_layouts.main')
 
 @section('body')
-    <h1>{{ $page->title }}</h1>
+    <h1>{{ $page->title }} ({{ count($page->posts($posts)) }})</h1>
 
     <div class="text-2xl border-b border-indigo-200 mb-6 pb-6">
         @yield('content')
