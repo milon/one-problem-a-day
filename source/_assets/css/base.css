@@ -167,3 +167,29 @@ section#paginator span {
     margin: 0 6px;
     text-decoration: none;
 }
+
+table {
+    @apply min-w-full;
+}
+
+thead, tbody {
+    @apply border-b;
+}
+
+thead > tr > th {
+    @apply text-sm;
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply px-6;
+    @apply py-4;
+    @apply text-left;
+}
+
+tbody > tr > td{
+    @apply px-6;
+    @apply py-4;
+    @apply whitespace-nowrap;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-gray-900;
+}

@@ -9,7 +9,7 @@ categories: [bit-manipulation]
 
 We can have a repeatative pattern if we look at the most significant bit. For example, lets look the following table-
 
-| number | binary |
+| Number | Binary |
 |--------|--------|
 | 0      | 000    |
 | 1      | 001    |
