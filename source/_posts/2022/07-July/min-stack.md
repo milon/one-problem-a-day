@@ -30,3 +30,5 @@ class MinStack:
     def getMin(self) -> int:
         return self.minStack[-1]
 ```
+
+We were asked to do each operation in `O(1)` time complexity, we achieved that. The space complexity is `O(n+n)` as we have 2 stack, which is still linear.
