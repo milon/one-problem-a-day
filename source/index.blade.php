@@ -1,19 +1,24 @@
 ---
+title: Problem Categories
 pagination:
-    collection: posts
+    collection: categories
+    perPage: 30
 ---
 @extends('_layouts.main')
 
 @section('body')
-    @foreach ($pagination->items as $post)
-        @include('_components.post-preview-inline')
+    <h1 class="mb-6">{{ $page->title }}</h1>
+    <hr class="border-b my-6">
 
-        @if ($post != $pagination->items->last())
-            <hr class="border-b my-6">
-        @endif
+    @foreach ($pagination->items as $category)
+        <p class="m-0">
+            <a
+                href="{{ $category->getUrl() }}"
+                title="Read more - {{ $category->title }}"
+                class="text-2xl text-gray-900 font-extrabold"
+            >
+                {{ $category->title }} <span class="text-gray-700 font-medium text-base"> ({{ count($category->posts($posts)) }}) </span>
+            </a> 
+        </p>
     @endforeach
-
-    <div class="clearfix">
-        @include('_components.pagination')
-    </div>
-@stop
+@endsection

@@ -1,1 +1,7 @@
 /* Your custom blog styles here */
+
+#js-nav-menu ul {
+    columns: 1;
+    -wenkit-columns: 1;
+    -moz-column: 1;
+}

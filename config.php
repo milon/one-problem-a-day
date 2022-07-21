@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://one-problem-a-day.test',
     'production' => false,
     'siteName' => 'One problem a day',
     'siteDescription' => 'Solve one problem per day',
