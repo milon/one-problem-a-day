@@ -15,7 +15,7 @@ pagination:
             <a
                 href="{{ $category->getUrl() }}"
                 title="Read more - {{ $category->title }}"
-                class="text-2xl text-gray-900 font-extrabold"
+                class="text-2xl text-gray-900 font-semibold"
             >
                 {{ $category->title }} <span class="text-gray-700 font-medium text-base"> ({{ count($category->posts($posts)) }}) </span>
             </a> 
