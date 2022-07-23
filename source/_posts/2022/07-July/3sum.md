@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: 3Sum
 problemUrl: https://leetcode.com/problems/3sum/
-date: 2022-07-24
+date: 2022-07-23
 categories: [two-pointers]
 ---
 
