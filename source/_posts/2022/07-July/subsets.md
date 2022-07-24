@@ -33,4 +33,4 @@ class Solution:
 ```
 
 Time Complexity: `O(2^n)` <br/>
-Space Complexity: `O(1)`, as we store directly to the result array, which doesn't count as extra space.
+Space Complexity: `O(n)`, as we store directly to the result array, which doesn't count as extra space.
