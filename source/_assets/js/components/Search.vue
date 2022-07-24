@@ -78,7 +78,7 @@ export default {
     },
     computed: {
         results() {
-            return this.query ? this.fuse.search(this.query) : [];
+            return this.query ? this.fuse.search(this.query, {limit: 7}) : [];
         },
     },
     methods: {
