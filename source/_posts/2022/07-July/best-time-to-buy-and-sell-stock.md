@@ -23,5 +23,5 @@ class Solution:
         return res
 ```
 
-Time Complexity: O(n) <br/>
-Space Complexity: O(1)
+Time Complexity: `O(n)` <br/>
+Space Complexity: `O(1)`
