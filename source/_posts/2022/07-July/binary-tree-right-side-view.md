@@ -19,21 +19,22 @@ This problem asked us to return the list of the nodes when we look it from the r
 
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
         result = []
-        q = collections.deque([root])
-        
+        q = deque([root])
+
         while q:
-            rightSide = None
             qLen = len(q)
-            
-            for i in range(qLen):
+            for _ in range(qLen):
                 node = q.popleft()
-                if node:
-                    rightSide = node
+                if node.left:
                     q.append(node.left)
+                if node.right:
                     q.append(node.right)
-            if rightSide:
-                result.append(rightSide.val)
+            result.append(node.val)
+
         return result
 ```
 
