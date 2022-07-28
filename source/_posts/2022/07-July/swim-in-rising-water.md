@@ -4,7 +4,7 @@ section: content
 title: Swim in rising water
 problemUrl: https://leetcode.com/problems/swim-in-rising-water/
 date: 2022-07-28
-categories: [dynamic-programming]
+categories: [graph]
 ---
 
 We will apply Dijkstra's greedy algorithm to solve this problem. It's basically a BFS traversal, but rather than use a regular queue, we will use a minimum heap aka. priority queue to pop from the queue. In the process we will store the maximum value of the grid's current position. After we reach the target position, that means the last position of the grid, we will return the maximum value.
