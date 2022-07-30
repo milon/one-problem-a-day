@@ -34,4 +34,4 @@ class Solution:
         return True
 ```
 
-We go through the whole grid once, so time complexity should be O(n). Similarly the space complexity should be O(n^3). But as we are given a 9X9 grid, it's a constant time and space operation. So both time and space complexity will be `O(1)`.
+We go through the whole grid once, so time complexity should be `O(n)`. Similarly the space complexity should be O(n^3). But as we are given a 9X9 grid, it's a constant time and space operation. So both time and space complexity will be `O(1)`.

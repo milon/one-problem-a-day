@@ -24,6 +24,6 @@ class Solution:
         return not stack
 ```
 
-Time Complexity: O(n) <br/>
-Space Complexity: O(n)
+Time Complexity: `O(n)` <br/>
+Space Complexity: `O(n)`
 
