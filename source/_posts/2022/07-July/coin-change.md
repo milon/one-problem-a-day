@@ -33,5 +33,5 @@ class Solution:
         return memo[amount]
 ```
 
-Time Complexity: O(n*a), n is the number of coins, a is the amount of money <br/>
-Space Complexity: O(n*a)
+Time Complexity: `O(n*a)`, n is the number of coins, a is the amount of money <br/>
+Space Complexity: `O(n*a)`
