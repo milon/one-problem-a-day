@@ -31,5 +31,5 @@ class Solution:
         return findWays(index, 0, {})
 ```
 
-Time Complexity: O(n*t), n is the number of elements in the array, t is the target sum <br>
-Space Complexity: O(n*t)
+Time Complexity: `O(n*t)`, n is the number of elements in the array, t is the target sum <br/>
+Space Complexity: `O(n*t)`
