@@ -30,5 +30,5 @@ class Solution:
         return res
 ```
 
-Time Complexity: `O(2^n)`
+Time Complexity: `O(2^n)` <br/>
 Space Complexity: `O(1)`

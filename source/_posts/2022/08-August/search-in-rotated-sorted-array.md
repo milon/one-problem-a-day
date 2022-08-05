@@ -36,5 +36,5 @@ class Solution:
         return -1
 ```
 
-Time Complexity: `O(log(n))`
+Time Complexity: `O(log(n))` <br/>
 Space Complexity: `O(1)`

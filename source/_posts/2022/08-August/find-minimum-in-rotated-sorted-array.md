@@ -27,5 +27,5 @@ class Solution:
         return res
 ```
 
-Time Complexity: `O(log(n))`
+Time Complexity: `O(log(n))` <br/>
 Space Complexity: `O(1)`
