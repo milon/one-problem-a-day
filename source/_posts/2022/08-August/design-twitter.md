@@ -4,7 +4,7 @@ section: content
 title: Design twitter
 problemUrl: https://leetcode.com/problems/design-twitter/
 date: 2022-08-06
-categories: [tree]
+categories: [heap]
 ---
 
 This is a classic object oriented design problem. We will use a hashmap for the tweet map and another hashmap for the follow map. Each element of the tweet map with be a list, and each element of the list will have the tweetId and the count of the current timestamp. This timestamp will be a global attribute, so every method can reach it. Each element of the follow map will be a set, so we don't duplicate the same follower twice.
