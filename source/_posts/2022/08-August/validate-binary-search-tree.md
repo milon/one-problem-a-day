@@ -4,7 +4,7 @@ section: content
 title: Validate binary search tree
 problemUrl: https://leetcode.com/problems/validate-binary-search-tree/
 date: 2022-08-06
-categories: [linked-list]
+categories: [tree]
 ---
 
 We will run a DFS, and each iteration we will compare the value of the node with a left and right value, which we will pass along each iteration. For root, this values will be negative and positive infinity.
