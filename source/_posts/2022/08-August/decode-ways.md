@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Decode ways
 problemUrl: https://leetcode.com/problems/decode-ways/
-date: 2022-08-05
+date: 2022-08-10
 categories: [dynamic-programming]
 ---
 
