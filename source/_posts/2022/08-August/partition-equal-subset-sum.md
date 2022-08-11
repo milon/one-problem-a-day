@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Partition equal subset sum
 problemUrl: https://leetcode.com/problems/partition-equal-subset-sum/
-date: 2022-08-10
+date: 2022-08-11
 categories: [dynamic-programming]
 ---
 
