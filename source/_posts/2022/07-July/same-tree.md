@@ -28,4 +28,4 @@ class Solution:
         return False
 ```
 
-We are traversing the thee once, so time complexity is `O(n)`. The call stack of the recursion can also store the whole tree in worst case scenerio, so the space complexity will also be `O(n)`.
+We are traversing the thee once, so time complexity is `O(n)`. The call stack of the recursion can store the whole tree in worst case scenerio, which is actually the height of the tree, that means space complexity will be `O(log(n))`.
