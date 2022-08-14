@@ -1,8 +1,8 @@
 ---
 extends: _layouts.post
 section: content
-title: Redundant connection
-problemUrl: https://leetcode.com/problems/redundant-connection/
+title: Word ladder
+problemUrl: https://leetcode.com/problems/word-ladder/
 date: 2022-08-12
 categories: [graph]
 ---
