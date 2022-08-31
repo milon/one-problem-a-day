@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: reduce-array-size-to-the-half
+title: Reduce array size to the half
 problemUrl: https://leetcode.com/problems/reduce-array-size-to-the-half/
 date: 2022-08-18
 categories: [array-and-hashmap]
