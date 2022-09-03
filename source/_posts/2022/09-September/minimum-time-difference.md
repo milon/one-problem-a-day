@@ -4,7 +4,7 @@ section: content
 title: Minimum time difference
 problemUrl: https://leetcode.com/problems/minimum-time-difference/
 date: 2022-09-02
-categories: [array-and-hashmap]
+categories: [intervals]
 ---
 
 First we convert the hours into minutes and append them into a new array. Then we sort the new array and go through each element and look for minimum difference. Once we reach the last element in the list, we compare the last element with the first element in the list.
