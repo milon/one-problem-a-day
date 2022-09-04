@@ -1,8 +1,8 @@
 ---
 extends: _layouts.post
 section: content
-title: Populating next right pointers in each node
-problemUrl: https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+title: Populating next right pointers in each node II
+problemUrl: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 date: 2022-09-04
 categories: [tree]
 ---
