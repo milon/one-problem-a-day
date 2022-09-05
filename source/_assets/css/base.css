@@ -108,6 +108,8 @@ ul {
 
 ol {
     @apply list-decimal;
+    @apply list-inside;
+    @apply pl-4;
 }
 
 ul {
