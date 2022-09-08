@@ -4,7 +4,7 @@ section: content
 title: Combination sum III
 problemUrl: https://leetcode.com/problems/combination-sum-iii/
 date: 2022-09-08
-categories: [backtracing]
+categories: [backtracking]
 ---
 
 We will run DFS towards our decision tree, for building a decision tree, we have 2 options, either we take the number or we skip the number. We will check when the sum of the numbers we took is equal to n and we took exactly k numbers starting from 1, then we add that to our result, otherwise we backtrack and take another path. Finally we will return our result once the traversal of the decision tree is done.
