@@ -36,11 +36,7 @@ class Solution:
         for row, col, value in values:
             lookup[col].append(value)
         
-        res = []
-        for items in lookup.values():
-            res.append(items)
-            
-        return res
+        return lookup.values()
 ```
 
 Time Complexity: `O(n)` <br/>
