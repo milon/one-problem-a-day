@@ -4,7 +4,7 @@ section: content
 title: Implement trie prefix tree
 problemUrl: https://leetcode.com/problems/implement-trie-prefix-tree/
 date: 2022-07-21
-categories: [trie]
+categories: [trie, design]
 ---
 
 This problem literary ask to implement a prefix tree or Trie. Each node will have children for which we have used a hashmap for constant time insert and lookup abd a boolean value to denote whether it's the end of the word or not.

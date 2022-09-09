@@ -4,7 +4,7 @@ section: content
 title: Design underground system
 problemUrl: https://leetcode.com/problems/design-underground-system/
 date: 2022-09-03
-categories: [array-and-hashmap]
+categories: [design]
 ---
 
 We will use 2 hashmap to store the passengers data and travel time data. When someone check if, we add it to the passengers hashset, along with the time. When someone check out, we take the start time from the hashset, and add the difference in out travel times hashmap, the key will the `startStation-endStation` as a string. Whenever we need the average, we will grab the values with the same key combination and return return the mean value of that list.

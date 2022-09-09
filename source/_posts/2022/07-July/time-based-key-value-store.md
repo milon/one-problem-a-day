@@ -4,7 +4,7 @@ section: content
 title: Time based key value store
 problemUrl: https://leetcode.com/problems/time-based-key-value-store/
 date: 2022-07-23
-categories: [binary-search]
+categories: [binary-search, design]
 ---
 
 We will keep a hashmap as the key value store, key will be used as the key, value will have an array storing all the values and timestamp. When we search for the value, we will look up in the store for the values and binary search through the timestamp to get the value.

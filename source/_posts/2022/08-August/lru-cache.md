@@ -4,7 +4,7 @@ section: content
 title: LRU cache
 problemUrl: https://leetcode.com/problems/lru-cache/
 date: 2022-08-05
-categories: [linked-list]
+categories: [linked-list, design]
 ---
 
 We will use a hashmap to lookup the key in out cache and a link list to keep track of most and least used cache item.

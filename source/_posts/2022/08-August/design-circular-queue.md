@@ -4,7 +4,7 @@ section: content
 title: Design circular queue
 problemUrl: https://leetcode.com/problems/design-circular-queue/
 date: 2022-08-13
-categories: [queue]
+categories: [queue, design]
 ---
 
 We can implement a circular queue by using an array, the maximum size of the array will be the given input k. Then we will keep 2 pointers, one for head and one for tail, and whenever we enqueue some value, we will do it in the front, and dequeue from the rear.

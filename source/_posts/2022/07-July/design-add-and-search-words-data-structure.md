@@ -4,7 +4,7 @@ section: content
 title: Design add and search words data structure
 problemUrl: https://leetcode.com/problems/design-add-and-search-words-data-structure/
 date: 2022-07-23
-categories: [trie]
+categories: [trie, design]
 ---
 
 We will implement the trie as normal, the addWord function will be identical to a normal trie. The search function will be a little different. We will iterate over each character, if the character is a normal alphabet, we will do it as it is. But if it is a `"."`, then we will run DFS on every child node of that node to get the result.

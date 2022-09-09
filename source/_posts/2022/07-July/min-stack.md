@@ -4,7 +4,7 @@ section: content
 title: Min stack
 problemUrl: https://leetcode.com/problems/min-stack/
 date: 2022-07-19
-categories: [stack]
+categories: [stack, design]
 ---
 
 We we have 2 stack. One will be the regular and the another will be min stack. When we push something in stack, we push the value in regular stack and we check the top element of the min stack. If top value is less than the value, then we push the top value again, or we push the value. When we pop, we pop from both stack.

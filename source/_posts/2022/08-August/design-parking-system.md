@@ -4,7 +4,7 @@ section: content
 title: Design parking system
 problemUrl: https://leetcode.com/problems/design-parking-system/
 date: 2022-08-19
-categories: [array-and-hashmap]
+categories: [array-and-hashmap, design]
 ---
 
 We will create a hashmap, with the capacity. Each time, we add a car, we decrease the capacity by 1. If the capacity is already filled up, we return false, otherwise return true.

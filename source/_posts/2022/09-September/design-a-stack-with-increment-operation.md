@@ -4,7 +4,7 @@ section: content
 title: Design a stack with increment operation
 problemUrl: https://leetcode.com/problems/design-a-stack-with-increment-operation/
 date: 2022-09-06
-categories: [stack]
+categories: [design, stack]
 ---
 
 We will create a stack and store the max length of the stack. If someone push anything, if the stack is not already full, we will push it to the stack. Similarly, is the stack is not empty, we returned the popped element else return -1. For increment, we will check the minimum length between k and length of the stack. The we will increase the values by provided value.

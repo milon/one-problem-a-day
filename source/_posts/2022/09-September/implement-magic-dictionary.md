@@ -4,7 +4,7 @@ section: content
 title: Implement magic dictionary
 problemUrl: https://leetcode.com/problems/implement-magic-dictionary/
 date: 2022-09-06
-categories: [trie]
+categories: [trie, design]
 ---
 
 We will use the Trie data structure to store all the elements in the dictionary. Building the dictionary is pretty strait forward, we will insert all the words from the dictionary to the trie. 

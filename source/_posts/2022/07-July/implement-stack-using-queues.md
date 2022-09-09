@@ -4,7 +4,7 @@ section: content
 title: Implement stack using queues
 problemUrl: https://leetcode.com/problems/implement-stack-using-queues/
 date: 2022-07-21
-categories: [queue]
+categories: [queue, design]
 ---
 
 It's easy to implement a stack using queue. You can pop, peek and check the empty as you normally do in a queue. You just need to do some extra work during the push method. First you push it to the queue, then you pop every element of the queue except the last one and push it back to the queue, this will mimic the push functionality of the stack.

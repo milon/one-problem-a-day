@@ -4,7 +4,7 @@ section: content
 title: Find median from data stream
 problemUrl: https://leetcode.com/problems/find-median-from-data-stream/
 date: 2022-08-07
-categories: [heap]
+categories: [heap, design]
 ---
 
 We will use a min heap and a max heap to calculate the median. The small heap will be a max heap and large heap will be a min heap. All the elements of the small heap will be smaller than large heap. So, whenever we insert something, we will insert it into the small heap and it at some point, small heap has 2 more elements than large heap, we will move one elements to the large heap, so it is never bigger than one element.

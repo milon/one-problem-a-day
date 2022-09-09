@@ -4,7 +4,7 @@ section: content
 title: Implement queue using stacks
 problemUrl: https://leetcode.com/problems/implement-queue-using-stacks/
 date: 2022-07-24
-categories: [queue]
+categories: [queue, design]
 ---
 
 We will have 2 stack, one for input, one for output. Whenever we push anything, we push it to the input stack, then pop every element from input stack and push it back to output stack. Every other operation we do it in output stack. 

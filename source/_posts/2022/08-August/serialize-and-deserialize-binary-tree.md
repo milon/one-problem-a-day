@@ -4,7 +4,7 @@ section: content
 title: Serialize and deserialize binary tree
 problemUrl: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 date: 2022-08-06
-categories: [tree]
+categories: [tree, design]
 ---
 
 For serialize the tree, we will traverse the tree in preorder and whenever we hit a null node, we put a `#` character there. Then we join each character with a comma delimeter and return the string.
