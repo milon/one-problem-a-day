@@ -4,7 +4,7 @@ section: content
 title: Pseudo palindromic paths in a binary tree
 problemUrl: https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
 date: 2022-09-14
-categories: [backtracking]
+categories: [backtracking, tree]
 ---
 
 We will start from root and traverse the root with DFS. In the process we will count the occureance of each node's value. Whenever we reach a root node, we will check for pseudo palindrome, if found one we increase the result count, else we remove that item from our count and continue. After the traversal of whole tree, we return our result.
