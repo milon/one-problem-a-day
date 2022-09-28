@@ -7,7 +7,7 @@ date: 2022-09-25
 categories: [array-and-hashmap]
 ---
 
-The problem statement says `nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])` is the defination of nice pairs. This can also be restated as `nums[i] - rev(nums[i]) == nums[j] - rev(nums[j])`. We will use this formula, and add the difference in a lookup table. And then just like the two sum problem, we will look for a matching pair on lookup hashmap, and add it to our result. Finally, we will return that in the result by moduling the given value `10^9+7`.
+The problem statement says nums[i]+rev(nums[j]) == nums[j]+rev(nums[i]) is the defination of nice pairs. This can also be restated as nums[i]-rev(nums[i]) == nums[j]-rev(nums[j]). We will use this formula, and add the difference in a lookup table. And then just like the two sum problem, we will look for a matching pair on lookup hashmap, and add it to our result. Finally, we will return that in the result by moduling the given value `10^9+7`.
 
 ```python
 class Solution:
