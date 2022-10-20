@@ -14,6 +14,9 @@ return [
             'sort' => '-date',
             'path' => 'problems/{filename}',
         ],
+        'template' => [
+            'path' => 'template/{filename}',
+        ],
         'categories' => [
             'path' => '/categories/{filename}',
             'sort' => '-date',
