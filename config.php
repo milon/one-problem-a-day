@@ -34,6 +34,9 @@ return [
     // Number of links in the pagination section, should be a odd number greater than or equals to 3
     'paginatationLinkNumber' => 5,
 
+    // Google Analytics Tracking Id. For example, UA-123456789-1
+    'gaTrackingId' => 'G-DPNYL8WECN',
+
     // helpers
     'getDate' => function ($page) {
         return Datetime::createFromFormat('U', $page->date);

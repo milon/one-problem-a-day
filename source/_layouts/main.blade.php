@@ -16,8 +16,16 @@
         <link rel="home" href="{{ $page->baseUrl }}">
         <link rel="icon" href="/assets/images/favicon.ico">
 
-        @if ($page->production)
-            <!-- Insert analytics code here -->
+        @if ($page->production && $page->gaTrackingId)
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $page->gaTrackingId }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '{{ $page->gaTrackingId }}');
+            </script>
         @endif
 
         <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
