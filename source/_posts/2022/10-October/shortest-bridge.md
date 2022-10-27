@@ -47,5 +47,5 @@ class Solution:
         return res
 ```
 
-Time complexity: O(n^2) <br/>
-Space complexity: O(n^2)
+Time complexity: `O(n^2)` <br/>
+Space complexity: `O(n^2)`

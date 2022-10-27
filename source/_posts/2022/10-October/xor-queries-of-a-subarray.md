@@ -17,5 +17,5 @@ class Solution:
         return [arr[j] ^ arr[i-1] if i else arr[j] for i, j in queries]
 ```
 
-Time complexity: O(n) <br/>
-Space complexity: O(1)
+Time complexity: `O(n)` <br/>
+Space complexity: `O(1)`
