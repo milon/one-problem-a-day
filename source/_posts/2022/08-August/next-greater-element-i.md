@@ -12,7 +12,6 @@ We traverse nums2 and start storing elements on the top of stack. If current num
 ```python
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        res = []
         stack = []
         mapping = {}
         for n in nums2:
