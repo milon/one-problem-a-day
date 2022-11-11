@@ -26,3 +26,12 @@ class Solution:
 
 Time Complexity: `O(nlog(n))` <br/>
 Space Complexity: `O(1)`
+
+We can also do it with python magic by using `set` and `list` functions.
+
+```python
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        nums[:] = list(set(nums))
+        return len(nums)
+```
