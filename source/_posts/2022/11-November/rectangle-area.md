@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Rectangle area
 problemUrl: https://leetcode.com/problems/rectangle-area/
-date: 2022-11-16
+date: 2022-11-17
 categories: [math-and-geometry]
 ---
 
