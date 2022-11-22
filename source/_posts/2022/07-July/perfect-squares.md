@@ -12,22 +12,16 @@ This problem is exactly like the coin change problem. But we are not given a lis
 ```python
 class Solution:
     def numSquares(self, n: int) -> int:
-        squares = [i**2 for i in range(1, int(math.sqrt(n))+1)]
+        squares = [i**2 for i in range(1, int(n**0.5)+1)]
         
         def _numSquares(n: int, memo: dict) -> int:
             if n in memo:
                 return memo[n]
             
-            if n < 0:
-                return math.inf
-            if n == 0 or n == 1:
-                return n
+            if n == 0:
+                return 0
             
-            minSqr = math.inf
-            for sqr in squares:
-                minSqr = min(minSqr, _numSquares(n-sqr, memo))
-            
-            memo[n] =  1 + minSqr
+            memo[n] = 1 + min(dp(n-s, memo) for s in squares if n>=s)
             return memo[n]
         
         return _numSquares(n, {})
