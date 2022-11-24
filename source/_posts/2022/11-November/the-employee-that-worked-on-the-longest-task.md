@@ -10,8 +10,6 @@ categories: [array-and-hashmap]
 We will iterate over the logs, and for each log, we will update the start time and end time of the employee. We will also update the longest task time of the employee. After iterating over the logs, we will iterate over the employees to find the employee that worked on the longest task.
 
 ```python
-
-```python
 class Solution:
     def hardestWorker(self, n: int, logs: List[List[int]]) -> int:
         res = logs[0][0]
