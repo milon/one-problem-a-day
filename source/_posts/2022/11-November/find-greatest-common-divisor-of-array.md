@@ -4,7 +4,7 @@ section: content
 title: Find greatest common divisor of array
 problemUrl: https://leetcode.com/problems/find-greatest-common-divisor-of-array/
 date: 2022-11-25
-categories: [mathp-and-geometry]
+categories: [math-and-geometry]
 ---
 
 We can solve the problem by using Euclidean algorithm. We will find the greatest common divisor of the first two numbers in the array. Then we will find the greatest common divisor of the greatest common divisor and the next number in the array. We will repeat this process until we reach the end of the array.
