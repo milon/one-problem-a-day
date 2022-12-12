@@ -1,8 +1,8 @@
 ---
 extends: _layouts.post
 section: content
-title: Lowest common ancestor of deepest leaves
-problemUrl: https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
+title: Smallest subtree with all the deepest nodes
+problemUrl: https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
 date: 2022-12-12
 categories: [tree]
 ---
@@ -18,7 +18,7 @@ We will traverse the tree with DFS and it will return the deepest depth of the t
 #         self.right = right
 
 class Solution:
-    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
         self.lca, self.deepest = None, 0
 
         def dfs(node, depth):
