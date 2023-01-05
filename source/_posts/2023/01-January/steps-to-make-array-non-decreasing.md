@@ -12,7 +12,6 @@ Iterating the input A backward, then for each `nums[i]`, find how many round it 
 Iterative input array A reversely, If `nums[i]` is bigger the last element `nums[j]` of stack, this means `nums[i]` can eat that element, then update `dp[i]` to be max of `dp[i]+1` and `dp[j]`.
 
 ```python
-
 class Solution:
     def totalSteps(self, nums: List[int]) -> int:
         n = len(nums)
