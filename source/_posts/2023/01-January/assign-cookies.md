@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Assign cookies
 problemUrl: https://leetcode.com/problems/assign-cookies/
-date: 2023-01-06
+date: 2023-01-07
 categories: [greedy]
 ---
 
