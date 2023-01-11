@@ -29,7 +29,6 @@ class Solution:
             return res
 
         return max(dfs(0,-1)-2, 0)
-
 ```
 
 Time complexity: `O(n)` <br/>
