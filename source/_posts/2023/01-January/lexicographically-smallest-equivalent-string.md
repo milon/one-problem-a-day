@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: lexicographically smallest equivalent string
+title: Lexicographically smallest equivalent string
 problemUrl: https://leetcode.com/problems/lexicographically-smallest-equivalent-string/
 date: 2023-01-14
 categories: [graph]
