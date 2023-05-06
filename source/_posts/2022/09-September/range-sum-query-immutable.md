@@ -24,3 +24,19 @@ class NumArray:
 
 Time Complexity: `O(n)` <br/>
 Space Complexity: `O(n)`
+
+We can also use a prefix sum array to store the sum of the prefix of the array. Then, we can just return the difference between the prefix sum of the right index and the prefix sum of the left index-1.
+
+```python
+class NumArray:
+    def __init__(self, nums: List[int]):
+        self.prefix_sum = [0]
+        for num in nums:
+            self.prefix_sum.append(self.prefix_sum[-1] + num)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.prefix_sum[right+1] - self.prefix_sum[left]
+```
+
+Time Complexity: `O(n)` <br/>
+Space Complexity: `O(n)`
