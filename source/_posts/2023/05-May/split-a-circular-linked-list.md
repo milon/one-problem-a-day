@@ -33,5 +33,5 @@ class Solution:
         return [head, next_list]
 ```
 
-Time complexity: `O(n)` where n is the number of nodes in the linked list.
+Time complexity: `O(n)` where n is the number of nodes in the linked list. <br/>
 Space complexity: `O(1)`

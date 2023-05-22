@@ -36,5 +36,5 @@ class Solution:
         return heapq.nlargest(k, levels)[-1]
 ```
 
-Time complexity: `O(nlog(k))` where n is the number of nodes in the tree.
+Time complexity: `O(nlog(k))` where n is the number of nodes in the tree. <br/>
 Space complexity: `O(n)` where n is the number of nodes in the tree.

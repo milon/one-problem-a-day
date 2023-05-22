@@ -26,5 +26,5 @@ class Solution:
         return arr[heap[0][1]], arr[heap[0][2]]
 ```
 
-Time complexity: `O(klog(n))` where n is the length of the array.
+Time complexity: `O(klog(n))` where n is the length of the array. <br/>
 Space complexity: `O(n)` where n is the length of the array.

@@ -19,7 +19,7 @@ class Solution:
         return dp[0]
 ```
 
-Time complexity: `O(n)` where n is the length of the prices array.
+Time complexity: `O(n)` where n is the length of the prices array. <br/>
 Space complexity: `O(n)`
 
 We can achieve the same result with top-down dynamic programming. We can use a hashmap to store the maximum profit for each day. We can return the maximum profit for the last day.
@@ -45,5 +45,5 @@ class Solution:
         return dfs(0, budget)
 ```
 
-Time complexity: `O(nlog(n))` where n is the length of the prices array.
+Time complexity: `O(nlog(n))` where n is the length of the prices array. <br/>
 Space complexity: `O(n)`

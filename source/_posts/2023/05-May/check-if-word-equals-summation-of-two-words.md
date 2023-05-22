@@ -44,5 +44,5 @@ class Solution:
         return int(firstnumval) + int(secondnumval) == int(targetnumval)
 ```
 
-Time complexity: `O(n)` where n is the length of the longest word.
+Time complexity: `O(n)` where n is the length of the longest word. <br/>
 Space complexity: `O(1)`

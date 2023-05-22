@@ -31,5 +31,5 @@ class Solution:
         return self.res
 ```
 
-Time complexity: `O(n^2)` where n is the number of nodes in the tree.
+Time complexity: `O(n^2)` where n is the number of nodes in the tree. <br/>
 Space complexity: `O(h)` where h is the height of the tree.

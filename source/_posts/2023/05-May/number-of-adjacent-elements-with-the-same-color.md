@@ -27,5 +27,5 @@ class Solution:
         return res        
 ```
 
-Time complexity: `O(n)` where n is the length of the queries array.
+Time complexity: `O(n)` where n is the length of the queries array. <br/>
 Space complexity: `O(n)` where n is the length of the queries array.

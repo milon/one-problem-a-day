@@ -21,5 +21,5 @@ class Solution:
         return n if k == 1 else -1
 ```
 
-Time complexity: `O(n)` where n is the value of n.
+Time complexity: `O(n)` where n is the value of n. <br/>
 Space complexity: `O(1)`
