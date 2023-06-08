@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Count negative numbers in a sorted matrix
 problemUrl: https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
-date: 2023-06-05
+date: 2023-06-07
 categories: [array-and-hashmap]
 ---
 
