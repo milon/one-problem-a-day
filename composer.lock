@@ -357,7 +357,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -410,7 +410,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -465,7 +465,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -511,16 +511,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "9887dd84e912572d793ee0ba6fcdbc441ee8c14f"
+                "reference": "c794b268b9fd3c2a535c766c011fb574e51b071e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/9887dd84e912572d793ee0ba6fcdbc441ee8c14f",
-                "reference": "9887dd84e912572d793ee0ba6fcdbc441ee8c14f",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/c794b268b9fd3c2a535c766c011fb574e51b071e",
+                "reference": "c794b268b9fd3c2a535c766c011fb574e51b071e",
                 "shasum": ""
             },
             "require": {
@@ -571,11 +571,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-05-04T14:53:51+00:00"
+            "time": "2023-06-07T17:21:24+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -626,7 +626,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -674,7 +674,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -729,7 +729,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -793,7 +793,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -839,7 +839,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -887,16 +887,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "5c38d755c5fa767d5b689867888ee4e5f53fc8a6"
+                "reference": "3fc1d9deb1dc8c256c3394e1547dccdd386bb2f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/5c38d755c5fa767d5b689867888ee4e5f53fc8a6",
-                "reference": "5c38d755c5fa767d5b689867888ee4e5f53fc8a6",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/3fc1d9deb1dc8c256c3394e1547dccdd386bb2f5",
+                "reference": "3fc1d9deb1dc8c256c3394e1547dccdd386bb2f5",
                 "shasum": ""
             },
             "require": {
@@ -954,11 +954,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-04-04T18:35:58+00:00"
+            "time": "2023-06-01T16:10:43+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v9.52.8",
+            "version": "v9.52.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -2288,16 +2288,16 @@
         },
         {
             "name": "spatie/ignition",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "ad13a6792992411e05d3d3b293e26bdf9f9a7321"
+                "reference": "d8eb8ea1ed27f48a694405cff363746ffd37f13e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/ad13a6792992411e05d3d3b293e26bdf9f9a7321",
-                "reference": "ad13a6792992411e05d3d3b293e26bdf9f9a7321",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/d8eb8ea1ed27f48a694405cff363746ffd37f13e",
+                "reference": "d8eb8ea1ed27f48a694405cff363746ffd37f13e",
                 "shasum": ""
             },
             "require": {
@@ -2367,7 +2367,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-25T10:19:32+00:00"
+            "time": "2023-06-06T14:14:58+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
