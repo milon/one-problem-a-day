@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Split strings by separator
 problemUrl: https://leetcode.com/problems/split-strings-by-separator/
-date: 2023-06-24
+date: 2023-07-24
 categories: [array-and-hashmap]
 ---
 
