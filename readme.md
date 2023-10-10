@@ -6,4 +6,4 @@ My goal is to solve one Data Structure and Algorithm related problem per day. Th
 
 ## URL
 
-Website can be found here- [https://one-problem-a-day.netlify.app/](https://one-problem-a-day.netlify.app/).
+Website can be found here- [https://one-problem-a-day.milon.im/](https://one-problem-a-day.milon.im/).
