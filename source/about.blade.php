@@ -15,7 +15,7 @@ description: A little bit about the site
         If you have any questions, feel free to contact.
     </p>
 
-    <form action="https://formspree.io/f/xeqnbroz" class="mb-12" method="POST">
+    <form action="{{ $page->contactFormUrl }}" class="mb-12" method="POST">
         <div class="flex flex-wrap mb-6 -mx-3">
             <div class="w-full md:w-1/2 mb-6 md:mb-0 px-3">
                 <label class="block mb-2 text-gray-800 text-sm font-semibold" for="contact-name">

@@ -73,4 +73,6 @@ return [
     'isActive' => function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
+
+    'contactFormUrl' => 'https://formspree.io/f/xeqnbroz',
 ];

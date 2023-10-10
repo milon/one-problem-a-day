@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d8cd4ef6-0492-4646-9e4c-9b8811dc01c7/deploy-status)](https://app.netlify.com/sites/one-problem-a-day/deploys)
+![Github Actions](https://github.com/milon/one-problem-a-day/actions/workflows/build-publish.yml/badge.svg)
 
 # One problem a day
 
