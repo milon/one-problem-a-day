@@ -3,7 +3,8 @@
     "scripts": {
         "dev": "mix",
         "watch": "mix watch",
-        "prod": "mix --production"
+        "prod": "mix --production",
+        "production": "mix --production"
     },
     "devDependencies": {
         "axios": "^0.21.1",
