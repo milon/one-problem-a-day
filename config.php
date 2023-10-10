@@ -12,9 +12,11 @@ return [
     'collections' => [
         'posts' => [
             'sort' => '-date',
+            'type' => 'article',
             'path' => 'problems/{filename}',
         ],
         'template' => [
+            'type' => 'template',
             'path' => 'template/{filename}',
         ],
         'categories' => [
