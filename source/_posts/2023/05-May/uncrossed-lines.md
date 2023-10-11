@@ -7,7 +7,7 @@ date: 2023-05-10
 categories: [dynamic-programming]
 ---
 
-We can use top-down dynamic programming to solve the problem. We will use two pointers `i` and `j` to iterate over `A` and `B` respectively. If `A[i] == B[j]`, we will increment both `i` and `j` and add 1 to the result. Otherwise, we will increment `i` and `j` separately and take the maximum of the two results. Finally, we will return the result. We will use a hashmap to store the results of the subproblems.
+We can use top-down dynamic programming to solve the problem. We will use two pointers `i` and `j` to iterate over `A` and `B` respectively. If A[i] == B[j], we will increment both `i` and `j` and add 1 to the result. Otherwise, we will increment `i` and `j` separately and take the maximum of the two results. Finally, we will return the result. We will use a hashmap to store the results of the subproblems.
 
 ```python
 class Solution:
