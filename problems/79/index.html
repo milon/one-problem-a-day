@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Problems | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/problems/79"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Problems | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1 class="mb-6">Problems</h1>
+    <hr class="border-b my-6">
+
+            <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 9, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/valid-parenthesis-string"
+            title="Read more - Valid parenthesis string"
+            class="text-gray-900 font-extrabold"
+        >Valid parenthesis string</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will keep track of number of left parenthesis and number of right parenthesis in the string. For <code>*</code>, we could count it as left parenthesis or right parenthesis or we could ignore it....</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/valid-parenthesis-string"
+        title="Read more - Valid parenthesis string"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 8, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/clone-graph"
+            title="Read more - Clone graph"
+            class="text-gray-900 font-extrabold"
+        >Clone graph</a>
+    </h2>
+
+    <p class="mb-4 mt-0">First we will create a copy of the graph and put it on our hashmap. Then we run DFS for each neighbors to do the same thing, once the whole traverse it done, we will return the copy.
+
+
+
+Time...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/clone-graph"
+        title="Read more - Clone graph"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 8, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/gas-station"
+            title="Read more - Gas station"
+            class="text-gray-900 font-extrabold"
+        >Gas station</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We can be greedy to solve this efficiently. First we need to check if it is possible to complete the circut by calculating the difference between total gas and total cost. If cost is higher, we...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/gas-station"
+        title="Read more - Gas station"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 8, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/house-robber-ii"
+            title="Read more - House robber II"
+            class="text-gray-900 font-extrabold"
+        >House robber II</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We can calculate the house robber using the same logic as the problem House robber, but we can't take the last element as it will create a circle. So, we can actually take 2 sets of numbers, one will...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/house-robber-ii"
+        title="Read more - House robber II"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 8, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-increasing-subsequence"
+            title="Read more - Longest increasing subsequence"
+            class="text-gray-900 font-extrabold"
+        >Longest increasing subsequence</a>
+    </h2>
+
+    <p class="mb-4 mt-0">First we append the first element in our list to the result array. Then we iterate over the other elements and compare, if the value is larger than the last element of the result array, if yes, then...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/longest-increasing-subsequence"
+        title="Read more - Longest increasing subsequence"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 8, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/palindromic-substrings"
+            title="Read more - Palindromic substrings"
+            class="text-gray-900 font-extrabold"
+        >Palindromic substrings</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will create a helper function to count the number of palindrome in a string starting from a left and right pointers. For odd number, both will be same index, for even left and right pointers will...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/palindromic-substrings"
+        title="Read more - Palindromic substrings"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 7, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-vowels-permutation"
+            title="Read more - Count vowels permutation"
+            class="text-gray-900 font-extrabold"
+        >Count vowels permutation</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We are going through the decision tree to map out all the possible combinations. The calculation will be kept in a 2-dimentional array, where each index will represent the combination of the string...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/count-vowels-permutation"
+        title="Read more - Count vowels permutation"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 7, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/detect-squares"
+            title="Read more - Detect squares"
+            class="text-gray-900 font-extrabold"
+        >Detect squares</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will keep track of each elements in a list and their respective points count in a hashmap. Whenever we add a point, we increment the points count and also add the point in points list. We we...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/detect-squares"
+        title="Read more - Detect squares"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 7, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-median-from-data-stream"
+            title="Read more - Find median from data stream"
+            class="text-gray-900 font-extrabold"
+        >Find median from data stream</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use a min heap and a max heap to calculate the median. The small heap will be a max heap and large heap will be a min heap. All the elements of the small heap will be smaller than large heap....</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/find-median-from-data-stream"
+        title="Read more - Find median from data stream"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        August 7, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/insert-interval"
+            title="Read more - Insert interval"
+            class="text-gray-900 font-extrabold"
+        >Insert interval</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will go through each interval, and compare the end of the new interval with the start of the current interval, if it doesn't collide, then just insert the new interval. Else, merge the interval...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/insert-interval"
+        title="Read more - Insert interval"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+            
+    <div class="clearfix">
+        <section id="paginator">
+                    <a href="/problems"><i class="fas fa-angle-double-left"></i></a>
+            <a href="/problems/78"><i class="fas fa-angle-left"></i></a>
+        
+                                    <span>...</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a href="/problems/77"
+                    class="">
+                        77
+                    </a>
+                                                                <a href="/problems/78"
+                    class="">
+                        78
+                    </a>
+                                                                <a href="/problems/79"
+                    class="selected">
+                        79
+                    </a>
+                                                                <a href="/problems/80"
+                    class="">
+                        80
+                    </a>
+                                                                <a href="/problems/81"
+                    class="">
+                        81
+                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span>...</span>
+                    
+                    <a href="/problems/80"><i class="fas fa-angle-right"></i></a>
+            <a href="/problems/95"><i class="fas fa-angle-double-right"></i></a>
+            </section>
+    </div>
+        </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
