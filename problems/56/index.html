@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Problems | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/problems/56"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Problems | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1 class="mb-6">Problems</h1>
+    <hr class="border-b my-6">
+
+            <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/bulb-switcher"
+            title="Read more - Bulb switcher"
+            class="text-gray-900 font-extrabold"
+        >Bulb switcher</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Basically, if bulb A has an odd number of factors, then that bulb will be on in the end because each bulb is off at the start. If bulb Ahas an even number of factors, then that bulb will be off in...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/bulb-switcher"
+        title="Read more - Bulb switcher"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/design-circular-deque"
+            title="Read more - Design circular deque"
+            class="text-gray-900 font-extrabold"
+        >Design circular deque</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We can use a deque from the collections in python, and use it as our q. We just need to make sure, we don't overflow the queue as we are given a size.
+
+
+
+Time Complexity: <code>O(1)</code>, for each...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/design-circular-deque"
+        title="Read more - Design circular deque"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/flatten-nested-list-iterator"
+            title="Read more - Flatten nested list iterator"
+            class="text-gray-900 font-extrabold"
+        >Flatten nested list iterator</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will iterate over the nested list, and go through each element and add that to a queue. Then when we need to check the next, we can pop the value from the queue. For the hasNext, we can just check...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/flatten-nested-list-iterator"
+        title="Read more - Flatten nested list iterator"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/push-dominoes"
+            title="Read more - Push dominoes"
+            class="text-gray-900 font-extrabold"
+        >Push dominoes</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Any triplet that reaches the state <code>R.L</code> remains that state permanently. These changes occur to pairs that are not part of an <code>R.L</code>, <code>R.</code> -> <code>RR</code> an...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/push-dominoes"
+        title="Read more - Push dominoes"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reverse-string-ii"
+            title="Read more - Reverse string II"
+            class="text-gray-900 font-extrabold"
+        >Reverse string II</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will divide the string to a list if characters. Then we take k characters and reverse it. Then we skip another k characters and take the next k characters. So, we are looping over the list with...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/reverse-string-ii"
+        title="Read more - Reverse string II"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 27, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/strictly-palindromic-number"
+            title="Read more - Strictly palindromic number"
+            class="text-gray-900 font-extrabold"
+        >Strictly palindromic number</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We can convert the number to it's base, and check whether it's a palindromic string or not, and return the result.
+
+
+
+Time Complexity: <code>O(n^2)</code> 
+Space Complexity: <code>O(1)</code>
+
+There...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/strictly-palindromic-number"
+        title="Read more - Strictly palindromic number"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 26, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/satisfiability-of-equality-equations"
+            title="Read more - Satisfiability of equality equations"
+            class="text-gray-900 font-extrabold"
+        >Satisfiability of equality equations</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We make an undirected graph in which the nodes are integers (as lower-case letters) and each edge connects integers that are equal. We use the union-find algorithm to determine the connected graphs....</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/satisfiability-of-equality-equations"
+        title="Read more - Satisfiability of equality equations"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 25, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-nice-pairs-in-an-array"
+            title="Read more - Count nice pairs in an array"
+            class="text-gray-900 font-extrabold"
+        >Count nice pairs in an array</a>
+    </h2>
+
+    <p class="mb-4 mt-0">The problem statement says nums[i]+rev(nums[j]) == nums[j]+rev(nums[i]) is the defination of nice pairs. This can also be restated as nums[i]-rev(nums[i]) == nums[j]-rev(nums[j]). We will use this...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/count-nice-pairs-in-an-array"
+        title="Read more - Count nice pairs in an array"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/concatenation-of-consecutive-binary-numbers"
+            title="Read more - Concatenation of consecutive binary numbers"
+            class="text-gray-900 font-extrabold"
+        >Concatenation of consecutive binary numbers</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will take a brute force approach to solve the problem. But rather than using <code>bin</code> function to convert the number to binary, which is prefixed with <code>0b</code>, we can use the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/concatenation-of-consecutive-binary-numbers"
+        title="Read more - Concatenation of consecutive binary numbers"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        September 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/partition-to-k-equal-sum-subsets"
+            title="Read more - Partition to k equal sum subsets"
+            class="text-gray-900 font-extrabold"
+        >Partition to k equal sum subsets</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We can try to split the numbers to k subsets, for that every subsets' sum will be total sum divided by k. It is best to iterate the input from biggest numbers, so that we can cut off bad solution...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/partition-to-k-equal-sum-subsets"
+        title="Read more - Partition to k equal sum subsets"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+            
+    <div class="clearfix">
+        <section id="paginator">
+                    <a href="/problems"><i class="fas fa-angle-double-left"></i></a>
+            <a href="/problems/55"><i class="fas fa-angle-left"></i></a>
+        
+                                    <span>...</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="/problems/54"
+                    class="">
+                        54
+                    </a>
+                                                                <a href="/problems/55"
+                    class="">
+                        55
+                    </a>
+                                                                <a href="/problems/56"
+                    class="selected">
+                        56
+                    </a>
+                                                                <a href="/problems/57"
+                    class="">
+                        57
+                    </a>
+                                                                <a href="/problems/58"
+                    class="">
+                        58
+                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span>...</span>
+                    
+                    <a href="/problems/57"><i class="fas fa-angle-right"></i></a>
+            <a href="/problems/95"><i class="fas fa-angle-double-right"></i></a>
+            </section>
+    </div>
+        </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
