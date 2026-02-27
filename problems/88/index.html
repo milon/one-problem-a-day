@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Problems | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/problems/88"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Problems | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1 class="mb-6">Problems</h1>
+    <hr class="border-b my-6">
+
+            <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/last-stone-weight"
+            title="Read more - Last stone weight"
+            class="text-gray-900 font-extrabold"
+        >Last stone weight</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use a max heap and then pop 2 element at a time and simulate the problem statement. As python doesn't have any max heap, we will use the min heap but multiply each element with -1 and the the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/last-stone-weight"
+        title="Read more - Last stone weight"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/meeting-rooms-ii"
+            title="Read more - Meeting rooms II"
+            class="text-gray-900 font-extrabold"
+        >Meeting rooms II</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will sort the intervals, then in each iteration we will compare the end of the meeting with the start of the previous meeting. We will keep track of the count for the number of meeting going on,...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/meeting-rooms-ii"
+        title="Read more - Meeting rooms II"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/plus-one"
+            title="Read more - Plus one"
+            class="text-gray-900 font-extrabold"
+        >Plus one</a>
+    </h2>
+
+    <p class="mb-4 mt-0">First we reverse the list, then add one to the fist item, if the number is 9, then we keep a carry and add it to the next number. We will do that until all the digit in the list have been iterated...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/plus-one"
+        title="Read more - Plus one"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/remove-nth-node-from-end-of-list"
+            title="Read more - Remove nth node from end of list"
+            class="text-gray-900 font-extrabold"
+        >Remove nth node from end of list</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will have 2 pointer, first we move the right pointer to nth node. Then we move both left and right pointer until the right pointer moves to the end of the list, that means left pointer is now on...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/remove-nth-node-from-end-of-list"
+        title="Read more - Remove nth node from end of list"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/subsets"
+            title="Read more - Subsets"
+            class="text-gray-900 font-extrabold"
+        >Subsets</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will do backtracking to solve the result. For each element of the list, we have 2 option, either we take the element or we leave the element. From this base case, if we run dfs for from the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/subsets"
+        title="Read more - Subsets"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/task-scheduler"
+            title="Read more - Task scheduler"
+            class="text-gray-900 font-extrabold"
+        >Task scheduler</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will first count each characters and create a max heap out of it. Then we pop the item from the heap, put it on a queue, and increase the value of our counter. Then we process the task, if there...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/task-scheduler"
+        title="Read more - Task scheduler"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 23, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/time-based-key-value-store"
+            title="Read more - Time based key value store"
+            class="text-gray-900 font-extrabold"
+        >Time based key value store</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will keep a hashmap as the key value store, key will be used as the key, value will have an array storing all the values and timestamp. When we search for the value, we will look up in the store...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/time-based-key-value-store"
+        title="Read more - Time based key value store"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/jump-game-ii"
+            title="Read more - Jump game II"
+            class="text-gray-900 font-extrabold"
+        >Jump game II</a>
+    </h2>
+
+    <p class="mb-4 mt-0">This is very similar to jump game, we will go for a greedy approah. We will have 2 pointer, left and right to determine the level of each move. In every iteration we will calculate the maximum number...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/jump-game-ii"
+        title="Read more - Jump game II"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/jump-game"
+            title="Read more - Jump game"
+            class="text-gray-900 font-extrabold"
+        >Jump game</a>
+    </h2>
+
+    <p class="mb-4 mt-0">This problem could definitely be solved by dynamic programming, but if we take greedy approach, we can solve it in linear time. We can iterate through the array from last index to first index. We set...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/jump-game"
+        title="Read more - Jump game"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        July 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/n-queens"
+            title="Read more - N-queens"
+            class="text-gray-900 font-extrabold"
+        >N-queens</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will have 3 different sets, one for the column, one for positive diagonal and one for negative diagonal. We will iterate over the each row, and try to add the queen in the board. If this is...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/n-queens"
+        title="Read more - N-queens"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+            
+    <div class="clearfix">
+        <section id="paginator">
+                    <a href="/problems"><i class="fas fa-angle-double-left"></i></a>
+            <a href="/problems/87"><i class="fas fa-angle-left"></i></a>
+        
+                                    <span>...</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="/problems/86"
+                    class="">
+                        86
+                    </a>
+                                                                <a href="/problems/87"
+                    class="">
+                        87
+                    </a>
+                                                                <a href="/problems/88"
+                    class="selected">
+                        88
+                    </a>
+                                                                <a href="/problems/89"
+                    class="">
+                        89
+                    </a>
+                                                                <a href="/problems/90"
+                    class="">
+                        90
+                    </a>
+                                                                                                                                                                                                    <span>...</span>
+                    
+                    <a href="/problems/89"><i class="fas fa-angle-right"></i></a>
+            <a href="/problems/95"><i class="fas fa-angle-double-right"></i></a>
+            </section>
+    </div>
+        </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
