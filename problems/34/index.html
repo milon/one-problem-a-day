@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Problems | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/problems/34"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Problems | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1 class="mb-6">Problems</h1>
+    <hr class="border-b my-6">
+
+            <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/random-pick-index"
+            title="Read more - Random pick index"
+            class="text-gray-900 font-extrabold"
+        >Random pick index</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use a dictionary to store the indices of the numbers. Then, we will iterate through the given array and store the indices of the numbers in the dictionary. Then, we will use a random number...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/random-pick-index"
+        title="Read more - Random pick index"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/shuffle-an-array"
+            title="Read more - Shuffle an array"
+            class="text-gray-900 font-extrabold"
+        >Shuffle an array</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use a list to store the original array. Then, we will use a list to store the shuffled array. Then, we will use a random number generator to generate a random number. Then, we will swap the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/shuffle-an-array"
+        title="Read more - Shuffle an array"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sort-colors"
+            title="Read more - Sort colors"
+            class="text-gray-900 font-extrabold"
+        >Sort colors</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use two pointers to keep track of the start and end of the array. Then, we will iterate through the array. If the number is 0, then we will swap the number at the start pointer with the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/sort-colors"
+        title="Read more - Sort colors"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 22, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/split-array-largest-sum"
+            title="Read more - Split array largest sum"
+            class="text-gray-900 font-extrabold"
+        >Split array largest sum</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We binary search largest sum in range [max(nums), sum(nums)], which is left = max(nums), right = sum(nums).
+
+
+mid = left + (right - left) // 2
+If canPartition(mid) then:
+
+
+Update the answer so far...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/split-array-largest-sum"
+        title="Read more - Split array largest sum"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/base-7"
+            title="Read more - Base 7"
+            class="text-gray-900 font-extrabold"
+        >Base 7</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will divide the number by 7 and keep track of the remainder. We will add the remainder to the result and multiply the result by 10. We will repeat this process until the number is 0.
+
+
+
+Time...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/base-7"
+        title="Read more - Base 7"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/camelcase-matching"
+            title="Read more - Camelcase matching"
+            class="text-gray-900 font-extrabold"
+        >Camelcase matching</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will create a helper function to check if a string is a subsequence of another string. Then we will iterate over the queries and check if the query is a subsequence of the pattern. If it is, then...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/camelcase-matching"
+        title="Read more - Camelcase matching"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/design-linked-list"
+            title="Read more - design linked list"
+            class="text-gray-900 font-extrabold"
+        >design linked list</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use a stack to store the values and then do the operations on the stack.</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/design-linked-list"
+        title="Read more - design linked list"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/linked-list-in-binary-tree"
+            title="Read more - Linked list in binary tree"
+            class="text-gray-900 font-extrabold"
+        >Linked list in binary tree</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will traverse the tree using DFS and check if the linked list is present in the tree or not. If the linked list is present in the tree, then we will return <code>True</code>. Otherwise, we will...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/linked-list-in-binary-tree"
+        title="Read more - Linked list in binary tree"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-sum-circular-subarray"
+            title="Read more - Maximum sum circular subarray"
+            class="text-gray-900 font-extrabold"
+        >Maximum sum circular subarray</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will use Kadane's algorithm to find the maximum subarray sum. Then, we will find the minimum subarray sum and subtract it from the total sum of the array. If the total sum is greater than the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/maximum-sum-circular-subarray"
+        title="Read more - Maximum sum circular subarray"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-700 font-medium my-2">
+        November 21, 2022
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-addition-to-make-integer-beautiful"
+            title="Read more - Minimum addition to make integer beautiful"
+            class="text-gray-900 font-extrabold"
+        >Minimum addition to make integer beautiful</a>
+    </h2>
+
+    <p class="mb-4 mt-0">We will iterate through the digits of the number and find the minimum number of digits we need to add to make the number beautiful. We will keep track of the number of digits we have seen and the...</p>
+
+    <a
+        href="https://one-problem-a-day.milon.im/problems/minimum-addition-to-make-integer-beautiful"
+        title="Read more - Minimum addition to make integer beautiful"
+        class="uppercase font-semibold tracking-wide mb-2"
+    >Read</a>
+</div>
+
+            
+    <div class="clearfix">
+        <section id="paginator">
+                    <a href="/problems"><i class="fas fa-angle-double-left"></i></a>
+            <a href="/problems/33"><i class="fas fa-angle-left"></i></a>
+        
+                                    <span>...</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="/problems/32"
+                    class="">
+                        32
+                    </a>
+                                                                <a href="/problems/33"
+                    class="">
+                        33
+                    </a>
+                                                                <a href="/problems/34"
+                    class="selected">
+                        34
+                    </a>
+                                                                <a href="/problems/35"
+                    class="">
+                        35
+                    </a>
+                                                                <a href="/problems/36"
+                    class="">
+                        36
+                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span>...</span>
+                    
+                    <a href="/problems/35"><i class="fas fa-angle-right"></i></a>
+            <a href="/problems/95"><i class="fas fa-angle-double-right"></i></a>
+            </section>
+    </div>
+        </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
