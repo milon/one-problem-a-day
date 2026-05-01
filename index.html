@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Problem Categories | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Problem Categories | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1 class="mb-6">Problem Categories</h1>
+    <hr class="border-b my-6">
+
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/array-and-hashmap"
+                title="Read more - Array &amp; Hashmap"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Array &amp; Hashmap <span class="text-gray-700 font-medium text-base"> (217) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/backtracking"
+                title="Read more - Backtracking"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Backtracking <span class="text-gray-700 font-medium text-base"> (32) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/binary-search"
+                title="Read more - Binary Search"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Binary Search <span class="text-gray-700 font-medium text-base"> (27) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/bit-manipulation"
+                title="Read more - Bit Manipulataion"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Bit Manipulataion <span class="text-gray-700 font-medium text-base"> (24) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/design"
+                title="Read more - Design"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Design <span class="text-gray-700 font-medium text-base"> (46) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/dynamic-programming"
+                title="Read more - Dynamic Programming"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Dynamic Programming <span class="text-gray-700 font-medium text-base"> (85) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/graph"
+                title="Read more - Graph"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Graph <span class="text-gray-700 font-medium text-base"> (73) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/greedy"
+                title="Read more - Greedy"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Greedy <span class="text-gray-700 font-medium text-base"> (59) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/heap"
+                title="Read more - Heap"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Heap <span class="text-gray-700 font-medium text-base"> (44) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/intervals"
+                title="Read more - Intervals"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Intervals <span class="text-gray-700 font-medium text-base"> (16) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/linked-list"
+                title="Read more - Linked List"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Linked List <span class="text-gray-700 font-medium text-base"> (50) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/math-and-geometry"
+                title="Read more - Math &amp; Germetry"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Math &amp; Germetry <span class="text-gray-700 font-medium text-base"> (85) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/queue"
+                title="Read more - Queue"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Queue <span class="text-gray-700 font-medium text-base"> (15) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/sliding-window"
+                title="Read more - Sliding Window"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Sliding Window <span class="text-gray-700 font-medium text-base"> (29) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/stack"
+                title="Read more - Stack"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Stack <span class="text-gray-700 font-medium text-base"> (48) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/tree"
+                title="Read more - Tree"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Tree <span class="text-gray-700 font-medium text-base"> (122) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/trie"
+                title="Read more - Trie"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Trie <span class="text-gray-700 font-medium text-base"> (14) </span>
+            </a> 
+        </p>
+            <p class="m-0">
+            <a
+                href="https://one-problem-a-day.milon.im/categories/two-pointers"
+                title="Read more - Two Pointers"
+                class="text-2xl text-gray-900 font-semibold"
+            >
+                Two Pointers <span class="text-gray-700 font-medium text-base"> (31) </span>
+            </a> 
+        </p>
+            </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
