@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="All problems that are about array and hashmap.">
+
+        <meta property="og:title" content="Array &amp; Hashmap | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/categories/array-and-hashmap"/>
+        <meta property="og:description" content="All problems that are about array and hashmap." />
+
+        <title>Array &amp; Hashmap | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+        
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=86ddee774e0bcf5a1bf6b25f7c738cbb">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="One problem a day home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/images/logo.svg" alt="One problem a day logo" />
+
+                        <h1 class="text-lg md:text-2xl text-indigo-500 font-semibold hover:text-indigo-700 my-0">One problem a day</h1>
+                    </a>
+                </div>
+
+                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                    <search></search>
+
+                    <nav class="hidden lg:flex items-center justify-end text-lg">
+    <a title="One problem a day - Problems" href="/problems"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        Problems
+    </a>
+    <a title="One problem a day - About" href="/about"
+        class="ml-6 text-gray-700 hover:text-indigo-600 ">
+        About
+    </a>
+</nav>
+
+                    <button class="flex justify-center items-center bg-indigo-500 border border-indigo-500 h-10 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="w-auto px-2 pt-6 pb-2 bg-gray-200 shadow hidden lg:hidden">
+    <ul class="my-0 list-none">
+        <li class="pl-4 block">
+            <a
+                title="One problem a day"
+                href="/"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Home</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day Problems"
+                href="/problems"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >Problems</a>
+        </li>
+        <li class="pl-4 block">
+            <a
+                title="One problem a day About"
+                href="/about"
+                class="block mt-0 mb-4 text-sm no-underline text-gray-800 hover:text-indigo-500"
+            >About</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
+                <h1>Array &amp; Hashmap <span class="text-xl">(217)</span></h1>
+
+    <div class="text-2xl border-b border-indigo-200 mb-6 pb-6">
+        <p>These problems are related to array and hashmap.</p>
+    </div>
+
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/split-strings-by-separator"
+            title="Read more - Split strings by separator"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Split strings by separator<span class="text-gray-700 font-medium text-base"> - July 24, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/missing-ranges"
+            title="Read more - Missing ranges"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Missing ranges<span class="text-gray-700 font-medium text-base"> - June 14, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-all-characters-have-equal-number-of-occurrences"
+            title="Read more - Check if all characters have equal number of occurrences"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if all characters have equal number of occurrences<span class="text-gray-700 font-medium text-base"> - June 13, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/summary-ranges"
+            title="Read more - Summary ranges"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Summary ranges<span class="text-gray-700 font-medium text-base"> - June 11, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-negative-numbers-in-a-sorted-matrix"
+            title="Read more - Count negative numbers in a sorted matrix"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count negative numbers in a sorted matrix<span class="text-gray-700 font-medium text-base"> - June 7, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/can-make-arithmetic-progression-from-sequence"
+            title="Read more - Can make arithmetic progression from sequence"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Can make arithmetic progression from sequence<span class="text-gray-700 font-medium text-base"> - June 5, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-vowel-strings-in-ranges"
+            title="Read more - Count vowel strings in ranges"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count vowel strings in ranges<span class="text-gray-700 font-medium text-base"> - May 24, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/left-and-right-sum-differences"
+            title="Read more - Left and right sum differences"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Left and right sum differences<span class="text-gray-700 font-medium text-base"> - May 24, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-word-equals-summation-of-two-words"
+            title="Read more - Check if word equals summation of two words"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if word equals summation of two words<span class="text-gray-700 font-medium text-base"> - May 19, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-adjacent-elements-with-the-same-color"
+            title="Read more - Number of adjacent elements with the same color"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of adjacent elements with the same color<span class="text-gray-700 font-medium text-base"> - May 18, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/consecutive-characters"
+            title="Read more - Consecutive characters"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Consecutive characters<span class="text-gray-700 font-medium text-base"> - May 14, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-permutation"
+            title="Read more - Find permutation"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find permutation<span class="text-gray-700 font-medium text-base"> - May 12, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/largest-unique-number"
+            title="Read more - Largest unique number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Largest unique number<span class="text-gray-700 font-medium text-base"> - May 10, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/prime-in-diagonal"
+            title="Read more - Prime in diagonal"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Prime in diagonal<span class="text-gray-700 font-medium text-base"> - May 8, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/matrix-diagonal-sum"
+            title="Read more - Matrix diagonal sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Matrix diagonal sum<span class="text-gray-700 font-medium text-base"> - May 7, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sort-array-by-increasing-frequency"
+            title="Read more - Sort array by increasing frequency"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sort array by increasing frequency<span class="text-gray-700 font-medium text-base"> - May 7, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/concatenation-of-array"
+            title="Read more - Concatenation of array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Concatenation of array<span class="text-gray-700 font-medium text-base"> - May 6, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-number-of-vowels-in-a-substring-of-given-length"
+            title="Read more - Maximum number of vowels in a substring of given length"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum number of vowels in a substring of given length<span class="text-gray-700 font-medium text-base"> - May 5, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/substrings-that-begin-and-end-with-the-same-letter"
+            title="Read more - Substrings that begin and end with the same letter"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Substrings that begin and end with the same letter<span class="text-gray-700 font-medium text-base"> - May 5, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/index-pairs-of-a-string"
+            title="Read more - Index pairs of a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Index pairs of a string<span class="text-gray-700 font-medium text-base"> - May 4, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-sum-with-exactly-k-elements"
+            title="Read more - Maximum sum with exactly k elements"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum sum with exactly k elements<span class="text-gray-700 font-medium text-base"> - May 4, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sentence-similarity"
+            title="Read more - Sentence similarity"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sentence similarity<span class="text-gray-700 font-medium text-base"> - February 1, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/candy"
+            title="Read more - Candy"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Candy<span class="text-gray-700 font-medium text-base"> - January 21, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/subarray-sums-divisible-by-k"
+            title="Read more - Subarray sums divisible by k"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Subarray sums divisible by k<span class="text-gray-700 font-medium text-base"> - January 19, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/flip-string-to-monotone-increasing"
+            title="Read more - Flip string to monotone increasing"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Flip string to monotone increasing<span class="text-gray-700 font-medium text-base"> - January 17, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/percentage-of-letter-in-string"
+            title="Read more - Percentage of letter in string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Percentage of letter in string<span class="text-gray-700 font-medium text-base"> - January 16, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/difference-between-element-sum-and-digit-sum-of-an-array"
+            title="Read more - Difference between element sum and digit sum of an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Difference between element sum and digit sum of an array<span class="text-gray-700 font-medium text-base"> - January 15, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-good-days-to-rob-the-bank"
+            title="Read more - Find good days to rob the bank"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find good days to rob the bank<span class="text-gray-700 font-medium text-base"> - January 10, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/shuffle-the-array"
+            title="Read more - Shuffle the array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Shuffle the array<span class="text-gray-700 font-medium text-base"> - January 10, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/confusing-number"
+            title="Read more - Confusing number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Confusing number<span class="text-gray-700 font-medium text-base"> - January 9, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-and-replace-in-string"
+            title="Read more - Find and replace in string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find and replace in string<span class="text-gray-700 font-medium text-base"> - January 9, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-operations-to-make-the-array-alternating"
+            title="Read more - Minimum operations to make the array alternating"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum operations to make the array alternating<span class="text-gray-700 font-medium text-base"> - January 6, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-segments-in-a-string"
+            title="Read more - Number of segments in a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of segments in a string<span class="text-gray-700 font-medium text-base"> - January 5, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/delete-columns-to-make-sorted"
+            title="Read more - Delete columns to make sorted"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Delete columns to make sorted<span class="text-gray-700 font-medium text-base"> - January 3, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/car-pooling"
+            title="Read more - Car pooling"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Car pooling<span class="text-gray-700 font-medium text-base"> - January 2, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sum-of-all-odd-length-subarrays"
+            title="Read more - Sum of all odd length subarrays"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sum of all odd length subarrays<span class="text-gray-700 font-medium text-base"> - January 1, 2023</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/3sum-smaller"
+            title="Read more - 3sum smaller"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            3sum smaller<span class="text-gray-700 font-medium text-base"> - December 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/adding-spaces-to-a-string"
+            title="Read more - adding-spaces-to-a-string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            adding-spaces-to-a-string<span class="text-gray-700 font-medium text-base"> - December 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/remove-letter-to-equalize-frequency"
+            title="Read more - Remove letter to equalize frequency"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Remove letter to equalize frequency<span class="text-gray-700 font-medium text-base"> - December 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/design-a-leaderboard"
+            title="Read more - Design a leaderboard"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Design a leaderboard<span class="text-gray-700 font-medium text-base"> - December 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-penalty-for-a-shop"
+            title="Read more - Minimum penalty for a shop"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum penalty for a shop<span class="text-gray-700 font-medium text-base"> - December 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/prefix-and-suffix-search"
+            title="Read more - Prefix and suffix search"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Prefix and suffix search<span class="text-gray-700 font-medium text-base"> - December 27, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-subsequence-with-limited-sum"
+            title="Read more - Longest subsequence with limited sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Longest subsequence with limited sum<span class="text-gray-700 font-medium text-base"> - December 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/most-popular-video-creator"
+            title="Read more - Most popular video creator"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Most popular video creator<span class="text-gray-700 font-medium text-base"> - December 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reward-top-k-students"
+            title="Read more - Reward top k students"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reward top k students<span class="text-gray-700 font-medium text-base"> - December 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/take-k-of-each-character-from-left-and-right"
+            title="Read more - Take k of each character from left and right"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Take k of each character from left and right<span class="text-gray-700 font-medium text-base"> - December 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/beautiful-array"
+            title="Read more - Beautiful array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Beautiful array<span class="text-gray-700 font-medium text-base"> - December 24, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/custom-sort-string"
+            title="Read more - Custom sort string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Custom sort string<span class="text-gray-700 font-medium text-base"> - December 24, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-good-meals"
+            title="Read more - Count good meals"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count good meals<span class="text-gray-700 font-medium text-base"> - December 23, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/shifting-letters"
+            title="Read more - Shifting letters"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Shifting letters<span class="text-gray-700 font-medium text-base"> - December 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/ways-to-make-a-fair-array"
+            title="Read more - Ways to make a fair array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Ways to make a fair array<span class="text-gray-700 font-medium text-base"> - December 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-array-pairs-are-divisible-by-k"
+            title="Read more - Check if array pairs are divisible by k"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if array pairs are divisible by k<span class="text-gray-700 font-medium text-base"> - December 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/decode-the-message"
+            title="Read more - Decode the message"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Decode the message<span class="text-gray-700 font-medium text-base"> - December 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/path-crossing"
+            title="Read more - Path crossing"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Path crossing<span class="text-gray-700 font-medium text-base"> - December 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/pancake-sorting"
+            title="Read more - Pancake sorting"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Pancake sorting<span class="text-gray-700 font-medium text-base"> - December 18, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/apply-discount-to-prices"
+            title="Read more - Apply discount to prices"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Apply discount to prices<span class="text-gray-700 font-medium text-base"> - December 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-sum-score-of-array"
+            title="Read more - Maximum sum score of array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum sum score of array<span class="text-gray-700 font-medium text-base"> - December 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-boomerangs"
+            title="Read more - Number of boomerangs"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of boomerangs<span class="text-gray-700 font-medium text-base"> - December 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/replace-elements-in-an-array"
+            title="Read more - Replace elements in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Replace elements in an array<span class="text-gray-700 font-medium text-base"> - December 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/encode-number"
+            title="Read more - Encode number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Encode number<span class="text-gray-700 font-medium text-base"> - December 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/widest-pair-of-indices-with-equal-range-sum"
+            title="Read more - Widest pair of indices with equal range sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Widest pair of indices with equal range sum<span class="text-gray-700 font-medium text-base"> - December 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-number-of-homogenous-substrings"
+            title="Read more - Count number of homogenous substrings"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count number of homogenous substrings<span class="text-gray-700 font-medium text-base"> - December 14, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-number-of-operations-to-move-all-balls-to-each-box"
+            title="Read more - Minimum number of operations to move all balls to each box"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum number of operations to move all balls to each box<span class="text-gray-700 font-medium text-base"> - December 14, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-whether-two-strings-are-almost-equivalent"
+            title="Read more - Check whether two strings are almost equivalent"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check whether two strings are almost equivalent<span class="text-gray-700 font-medium text-base"> - December 13, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/detect-capital"
+            title="Read more - Detect capital"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Detect capital<span class="text-gray-700 font-medium text-base"> - December 13, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/average-waiting-time"
+            title="Read more - Average waiting time"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Average waiting time<span class="text-gray-700 font-medium text-base"> - December 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-the-longest-substring-containing-vowels-in-even-counts"
+            title="Read more - Find the longest substring containing vowels in even counts"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find the longest substring containing vowels in even counts<span class="text-gray-700 font-medium text-base"> - December 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/valid-palindrome-iv"
+            title="Read more - Valid palindrome IV"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Valid palindrome IV<span class="text-gray-700 font-medium text-base"> - December 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-substring-with-at-least-k-repeating-characters"
+            title="Read more - Longest substring with at least k repeating characters"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Longest substring with at least k repeating characters<span class="text-gray-700 font-medium text-base"> - December 9, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-pairs-of-interchangeable-rectangles"
+            title="Read more - Number of pairs of interchangeable rectangles"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of pairs of interchangeable rectangles<span class="text-gray-700 font-medium text-base"> - December 9, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/can-you-eat-your-favorite-candy-on-your-favorite-day"
+            title="Read more - Can you eat your favorite candy on your favorite day"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Can you eat your favorite candy on your favorite day<span class="text-gray-700 font-medium text-base"> - December 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-size-subarray-sum-equals-k"
+            title="Read more - Maximum size subarray sum equals k"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum size subarray sum equals k<span class="text-gray-700 font-medium text-base"> - December 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-subarrays-having-even-product"
+            title="Read more - Number of subarrays having even product"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of subarrays having even product<span class="text-gray-700 font-medium text-base"> - December 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/words-within-two-edits-of-dictionary"
+            title="Read more - Words within two edits of dictionary"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Words within two edits of dictionary<span class="text-gray-700 font-medium text-base"> - December 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period"
+            title="Read more - Alert using same key card three or more times in a one hour period"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Alert using same key card three or more times in a one hour period<span class="text-gray-700 font-medium text-base"> - December 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/describe-the-painting"
+            title="Read more - Describe the painting"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Describe the painting<span class="text-gray-700 font-medium text-base"> - December 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/one-edit-distance"
+            title="Read more - One edit distance"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            One edit distance<span class="text-gray-700 font-medium text-base"> - December 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/wiggle-sort"
+            title="Read more - Wiggle sort"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Wiggle sort<span class="text-gray-700 font-medium text-base"> - December 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-average-difference"
+            title="Read more - Minimum average difference"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum average difference<span class="text-gray-700 font-medium text-base"> - December 4, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-number-of-steps-to-make-two-strings-anagram-ii"
+            title="Read more - Minimum number of steps to make two strings anagram II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum number of steps to make two strings anagram II<span class="text-gray-700 font-medium text-base"> - December 4, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-number-of-steps-to-make-two-strings-anagram"
+            title="Read more - Minimum number of steps to make two strings anagram"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum number of steps to make two strings anagram<span class="text-gray-700 font-medium text-base"> - December 4, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/determine-if-two-strings-are-close"
+            title="Read more - Determine if two strings are close"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Determine if two strings are close<span class="text-gray-700 font-medium text-base"> - December 2, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/determine-if-string-halves-are-alike"
+            title="Read more - Determine if string halves are alike"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Determine if string halves are alike<span class="text-gray-700 font-medium text-base"> - December 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/evaluate-the-bracket-pairs-of-a-string"
+            title="Read more - Evaluate the bracket pairs of a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Evaluate the bracket pairs of a string<span class="text-gray-700 font-medium text-base"> - December 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/majority-element-ii"
+            title="Read more - Majority element II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Majority element II<span class="text-gray-700 font-medium text-base"> - December 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/single-row-keyboard"
+            title="Read more - Single row keyboard"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Single row keyboard<span class="text-gray-700 font-medium text-base"> - December 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-all-lonely-numbers-in-the-array"
+            title="Read more - Find all lonely numbers in the array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find all lonely numbers in the array<span class="text-gray-700 font-medium text-base"> - November 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/fizz-buzz"
+            title="Read more - Fizz buzz"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Fizz buzz<span class="text-gray-700 font-medium text-base"> - November 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/unique-number-of-occurrences"
+            title="Read more - Unique number of occurrences"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Unique number of occurrences<span class="text-gray-700 font-medium text-base"> - November 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/unique-word-abbreviation"
+            title="Read more - Unique word abbreviation"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Unique word abbreviation<span class="text-gray-700 font-medium text-base"> - November 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/generate-a-string-with-characters-that-have-odd-counts"
+            title="Read more - Generate a string with characters that have odd counts"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Generate a string with characters that have odd counts<span class="text-gray-700 font-medium text-base"> - November 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reverse-words-in-a-string-ii"
+            title="Read more - Reverse words in a string II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reverse words in a string II<span class="text-gray-700 font-medium text-base"> - November 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/design-hashset"
+            title="Read more - Design hashset"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Design hashset<span class="text-gray-700 font-medium text-base"> - November 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-players-with-zero-or-one-losses"
+            title="Read more - Find players with zero or one losses"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find players with zero or one losses<span class="text-gray-700 font-medium text-base"> - November 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/shortest-word-distance"
+            title="Read more - Shortest word distance"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Shortest word distance<span class="text-gray-700 font-medium text-base"> - November 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-smallest-common-element-in-all-rows"
+            title="Read more - Find smallest common element in all rows"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find smallest common element in all rows<span class="text-gray-700 font-medium text-base"> - November 26, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/strobogrammatic-number"
+            title="Read more - Strobogrammatic number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Strobogrammatic number<span class="text-gray-700 font-medium text-base"> - November 26, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/the-employee-that-worked-on-the-longest-task"
+            title="Read more - The employee that worked on the longest task"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            The employee that worked on the longest task<span class="text-gray-700 font-medium text-base"> - November 24, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/integer-to-english-words"
+            title="Read more - Integer to english words"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Integer to english words<span class="text-gray-700 font-medium text-base"> - November 23, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/random-pick-index"
+            title="Read more - Random pick index"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Random pick index<span class="text-gray-700 font-medium text-base"> - November 22, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sort-colors"
+            title="Read more - Sort colors"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sort colors<span class="text-gray-700 font-medium text-base"> - November 22, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-sum-circular-subarray"
+            title="Read more - Maximum sum circular subarray"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum sum circular subarray<span class="text-gray-700 font-medium text-base"> - November 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sum-of-absolute-differences-in-a-sorted-array"
+            title="Read more - Sum of absolute differences in a sorted array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sum of absolute differences in a sorted array<span class="text-gray-700 font-medium text-base"> - November 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/vowel-spellchecker"
+            title="Read more - Vowel spellchecker"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Vowel spellchecker<span class="text-gray-700 font-medium text-base"> - November 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-all-duplicates-in-an-array"
+            title="Read more - Find all duplicates in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find all duplicates in an array<span class="text-gray-700 font-medium text-base"> - November 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reverse-prefix-of-word"
+            title="Read more - Reverse prefix of word"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reverse prefix of word<span class="text-gray-700 font-medium text-base"> - November 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/widest-vertical-area-between-two-points-containing-no-points"
+            title="Read more - Widest vertical area between two points containing no points"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Widest vertical area between two points containing no points<span class="text-gray-700 font-medium text-base"> - November 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/binary-subarrays-with-sum"
+            title="Read more - Binary subarrays with sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Binary subarrays with sum<span class="text-gray-700 font-medium text-base"> - November 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-ways-to-split-array"
+            title="Read more - Number of ways to split array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of ways to split array<span class="text-gray-700 font-medium text-base"> - November 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/first-letter-to-appear-twice"
+            title="Read more - First letter to appear twice"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            First letter to appear twice<span class="text-gray-700 font-medium text-base"> - November 18, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-the-highest-altitude"
+            title="Read more - Find the highest altitude"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find the highest altitude<span class="text-gray-700 font-medium text-base"> - November 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/finding-the-users-active-minutes"
+            title="Read more - Finding the users active minutes"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Finding the users active minutes<span class="text-gray-700 font-medium text-base"> - November 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-days-spent-together"
+            title="Read more - Count days spent together"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count days spent together<span class="text-gray-700 font-medium text-base"> - November 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/making-file-names-unique"
+            title="Read more - Making file names unique"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Making file names unique<span class="text-gray-700 font-medium text-base"> - November 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-distance-to-the-target-element"
+            title="Read more - Minimum distance to the target element"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum distance to the target element<span class="text-gray-700 font-medium text-base"> - November 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/make-two-arrays-equal-by-reversing-subarrays"
+            title="Read more - Make two arrays equal by reversing subarrays"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Make two arrays equal by reversing subarrays<span class="text-gray-700 font-medium text-base"> - November 15, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/merge-strings-alternately"
+            title="Read more - Merge strings alternately"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Merge strings alternately<span class="text-gray-700 font-medium text-base"> - November 14, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/removing-minimum-number-of-magic-beans"
+            title="Read more - Removing minimum number of magic beans"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Removing minimum number of magic beans<span class="text-gray-700 font-medium text-base"> - November 11, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/distribute-candies"
+            title="Read more - Distribute candies"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Distribute candies<span class="text-gray-700 font-medium text-base"> - November 9, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/pascals-triangle-ii"
+            title="Read more - Pascals triangle II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Pascals triangle II<span class="text-gray-700 font-medium text-base"> - November 8, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-69-number"
+            title="Read more - Maximum 69 number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum 69 number<span class="text-gray-700 font-medium text-base"> - November 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/wiggle-sort-ii"
+            title="Read more - Wiggle sort II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Wiggle sort II<span class="text-gray-700 font-medium text-base"> - November 7, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/jewels-and-stones"
+            title="Read more - Jewels and stones"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Jewels and stones<span class="text-gray-700 font-medium text-base"> - November 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/orderly-queue"
+            title="Read more - Orderly queue"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Orderly queue<span class="text-gray-700 font-medium text-base"> - November 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/counting-words-with-a-given-prefix"
+            title="Read more - Counting words with a given prefix"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Counting words with a given prefix<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-all-numbers-disappeared-in-an-array"
+            title="Read more - Find all numbers disappeared in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find all numbers disappeared in an array<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-pivot-index"
+            title="Read more - Find pivot index"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find pivot index<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/majority-element"
+            title="Read more - Majority element"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Majority element<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-number-of-balloons"
+            title="Read more - Maximum number of balloons"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum number of balloons<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sum-of-beauty-of-all-substrings"
+            title="Read more - Sum of beauty of all substrings"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sum of beauty of all substrings<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/the-k-strongest-values-in-an-array"
+            title="Read more - The k strongest values in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            The k strongest values in an array<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/word-pattern"
+            title="Read more - Word pattern"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Word pattern<span class="text-gray-700 font-medium text-base"> - November 5, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-palindrome-by-concatenating-two-letter-words"
+            title="Read more - Longest palindrome by concatenating two letter words"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Longest palindrome by concatenating two letter words<span class="text-gray-700 font-medium text-base"> - November 3, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-items-matching-a-rule"
+            title="Read more - Count items matching a rule"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count items matching a rule<span class="text-gray-700 font-medium text-base"> - November 2, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/largest-3-same-digit-number-in-string"
+            title="Read more - Largest 3 same digit number in string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Largest 3 same digit number in string<span class="text-gray-700 font-medium text-base"> - November 2, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/where-will-the-ball-fall"
+            title="Read more - Where will the ball fall"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Where will the ball fall<span class="text-gray-700 font-medium text-base"> - November 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/toeplitz-matrix"
+            title="Read more - Toeplitz matrix"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Toeplitz matrix<span class="text-gray-700 font-medium text-base"> - October 31, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/divide-array-into-equal-pairs"
+            title="Read more - Divide array into equal pairs"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Divide array into equal pairs<span class="text-gray-700 font-medium text-base"> - October 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/valid-number"
+            title="Read more - Valid number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Valid number<span class="text-gray-700 font-medium text-base"> - October 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/most-frequent-number-following-key-in-an-array"
+            title="Read more - Most frequent number following key in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Most frequent number following key in an array<span class="text-gray-700 font-medium text-base"> - October 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/image-overlap"
+            title="Read more - Image overlap"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Image overlap<span class="text-gray-700 font-medium text-base"> - October 27, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/groups-of-special-equivalent-strings"
+            title="Read more - Groups of special equivalent strings"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Groups of special equivalent strings<span class="text-gray-700 font-medium text-base"> - October 26, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-number-of-pairs-in-array"
+            title="Read more - Maximum number of pairs in array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum number of pairs in array<span class="text-gray-700 font-medium text-base"> - October 26, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-two-string-arrays-are-equivalent"
+            title="Read more - Check if two string arrays are equivalent"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if two string arrays are equivalent<span class="text-gray-700 font-medium text-base"> - October 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/maximum-length-of-a-concatenated-string-with-unique-characters"
+            title="Read more - Maximum length of a concatenated string with unique characters"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Maximum length of a concatenated string with unique characters<span class="text-gray-700 font-medium text-base"> - October 24, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/destination-city"
+            title="Read more - Destination city"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Destination city<span class="text-gray-700 font-medium text-base"> - October 22, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/contains-duplicate-ii"
+            title="Read more - Contains duplicate II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Contains duplicate II<span class="text-gray-700 font-medium text-base"> - October 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/isomorphic-strings"
+            title="Read more - Isomorphic strings"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Isomorphic strings<span class="text-gray-700 font-medium text-base"> - October 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/unique-email-addresses"
+            title="Read more - Unique email addresses"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Unique email addresses<span class="text-gray-700 font-medium text-base"> - October 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/queries-on-a-permutation-with-key"
+            title="Read more - Queries on a permutation with key"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Queries on a permutation with key<span class="text-gray-700 font-medium text-base"> - October 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/best-sightseeing-pair"
+            title="Read more - Best sightseeing pair"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Best sightseeing pair<span class="text-gray-700 font-medium text-base"> - October 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-numbers-with-even-number-of-digits"
+            title="Read more - Find numbers with even number of digits"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find numbers with even number of digits<span class="text-gray-700 font-medium text-base"> - October 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/determine-whether-matrix-can-be-obtained-by-rotation"
+            title="Read more - Determine whether matrix can be obtained by rotation"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Determine whether matrix can be obtained by rotation<span class="text-gray-700 font-medium text-base"> - October 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/break-a-palindrome"
+            title="Read more - Break a palindrome"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Break a palindrome<span class="text-gray-700 font-medium text-base"> - October 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-all-anagrams-in-a-string"
+            title="Read more - Find all anagrams in a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find all anagrams in a string<span class="text-gray-700 font-medium text-base"> - October 8, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/remove-element"
+            title="Read more - Remove element"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Remove element<span class="text-gray-700 font-medium text-base"> - October 8, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/unique-length-3-palindromic-subsequences"
+            title="Read more - Unique length 3 palindromic subsequences"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Unique length 3 palindromic subsequences<span class="text-gray-700 font-medium text-base"> - October 8, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-common-prefix"
+            title="Read more - Longest common prefix"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Longest common prefix<span class="text-gray-700 font-medium text-base"> - October 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/replace-elements-with-greatest-element-on-right-side"
+            title="Read more - Replace elements with greatest element on right side"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Replace elements with greatest element on right side<span class="text-gray-700 font-medium text-base"> - October 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-nice-pairs-in-an-array"
+            title="Read more - Count nice pairs in an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count nice pairs in an array<span class="text-gray-700 font-medium text-base"> - September 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reverse-words-in-a-string-iii"
+            title="Read more - Reverse words in a string III"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reverse words in a string III<span class="text-gray-700 font-medium text-base"> - September 22, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sum-of-even-numbers-after-queries"
+            title="Read more - Sum of even numbers after queries"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sum of even numbers after queries<span class="text-gray-700 font-medium text-base"> - September 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-duplicate-file-in-system"
+            title="Read more - Find duplicate file in system"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find duplicate file in system<span class="text-gray-700 font-medium text-base"> - September 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-original-array-from-doubled-array"
+            title="Read more - Find original array from doubled array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find original array from doubled array<span class="text-gray-700 font-medium text-base"> - September 15, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/validate-ip-address"
+            title="Read more - Validate ip address"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Validate ip address<span class="text-gray-700 font-medium text-base"> - September 15, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reorder-data-in-log-files"
+            title="Read more - Reorder data in log files"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reorder data in log files<span class="text-gray-700 font-medium text-base"> - September 13, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sender-with-largest-word-count"
+            title="Read more - Sender with largest word count"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sender with largest word count<span class="text-gray-700 font-medium text-base"> - September 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/max-sum-of-a-pair-with-equal-sum-of-digits"
+            title="Read more - Max sum of a pair with equal sum of digits"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Max sum of a pair with equal sum of digits<span class="text-gray-700 font-medium text-base"> - September 11, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/count-and-say"
+            title="Read more - Count and say"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Count and say<span class="text-gray-700 font-medium text-base"> - September 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/partition-array-according-to-given-pivot"
+            title="Read more - Partition array according to given pivot"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Partition array according to given pivot<span class="text-gray-700 font-medium text-base"> - September 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/tuple-with-same-product"
+            title="Read more - Tuple with same product"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Tuple with same product<span class="text-gray-700 font-medium text-base"> - September 9, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/h-index-ii"
+            title="Read more - H-index II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            H-index II<span class="text-gray-700 font-medium text-base"> - September 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/h-index"
+            title="Read more - H-index"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            H-index<span class="text-gray-700 font-medium text-base"> - September 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reverse-words-in-a-string"
+            title="Read more - Reverse words in a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reverse words in a string<span class="text-gray-700 font-medium text-base"> - September 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sort-an-array"
+            title="Read more - Sort an array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sort an array<span class="text-gray-700 font-medium text-base"> - September 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/sort-characters-by-frequency"
+            title="Read more - Sort characters by frequency"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Sort characters by frequency<span class="text-gray-700 font-medium text-base"> - September 6, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/equal-row-and-column-pairs"
+            title="Read more - Equal row and column pairs"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Equal row and column pairs<span class="text-gray-700 font-medium text-base"> - September 3, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/largest-number"
+            title="Read more - Largest number"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Largest number<span class="text-gray-700 font-medium text-base"> - September 3, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/4sum"
+            title="Read more - 4sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            4sum<span class="text-gray-700 font-medium text-base"> - September 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/integer-to-roman"
+            title="Read more - Integer to roman"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Integer to roman<span class="text-gray-700 font-medium text-base"> - September 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/next-permutation"
+            title="Read more - Next permutation"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Next permutation<span class="text-gray-700 font-medium text-base"> - September 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/simple-bank-system"
+            title="Read more - Simple bank system"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Simple bank system<span class="text-gray-700 font-medium text-base"> - September 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/zigzag-conversion"
+            title="Read more - Zigzag conversion"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Zigzag conversion<span class="text-gray-700 font-medium text-base"> - September 1, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/continuous-subarray-sum"
+            title="Read more - Continuous subarray sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Continuous subarray sum<span class="text-gray-700 font-medium text-base"> - August 31, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/rearrange-words-in-a-sentence"
+            title="Read more - Rearrange words in a sentence"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Rearrange words in a sentence<span class="text-gray-700 font-medium text-base"> - August 31, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/subarray-sum-equals-k"
+            title="Read more - Subarray sum equals k"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Subarray sum equals k<span class="text-gray-700 font-medium text-base"> - August 31, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/minimum-moves-to-make-array-complementary"
+            title="Read more - Minimum moves to make array complementary"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Minimum moves to make array complementary<span class="text-gray-700 font-medium text-base"> - August 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/remove-duplicates-from-sorted-array-ii"
+            title="Read more - Remove duplicates from sorted array II"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Remove duplicates from sorted array II<span class="text-gray-700 font-medium text-base"> - August 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/remove-duplicates-from-sorted-array"
+            title="Read more - Remove duplicates from sorted array"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Remove duplicates from sorted array<span class="text-gray-700 font-medium text-base"> - August 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/first-missing-positive"
+            title="Read more - First missing positive"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            First missing positive<span class="text-gray-700 font-medium text-base"> - August 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/game-of-life"
+            title="Read more - Game of life"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Game of life<span class="text-gray-700 font-medium text-base"> - August 28, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/3sum-closest"
+            title="Read more - 3sum closest"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            3sum closest<span class="text-gray-700 font-medium text-base"> - August 27, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-a-string-contains-all-binary-codes-of-size-k"
+            title="Read more - Check if a string contains all binary codes of size k"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if a string contains all binary codes of size k<span class="text-gray-700 font-medium text-base"> - August 27, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/ransom-note"
+            title="Read more - Ransom note"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Ransom note<span class="text-gray-700 font-medium text-base"> - August 25, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence"
+            title="Read more - Check if a word occurs as a prefix of any word in a sentence"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if a word occurs as a prefix of any word in a sentence<span class="text-gray-700 font-medium text-base"> - August 22, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/check-if-the-sentence-is-pangram"
+            title="Read more - Check if the sentence is pangram"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Check if the sentence is pangram<span class="text-gray-700 font-medium text-base"> - August 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-good-ways-to-split-a-string"
+            title="Read more - Number of good ways to split a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of good ways to split a string<span class="text-gray-700 font-medium text-base"> - August 21, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target"
+            title="Read more - Number of pairs of strings with concatenation equal to target"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Number of pairs of strings with concatenation equal to target<span class="text-gray-700 font-medium text-base"> - August 20, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/design-parking-system"
+            title="Read more - Design parking system"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Design parking system<span class="text-gray-700 font-medium text-base"> - August 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/split-array-into-consecutive-subsequences"
+            title="Read more - Split array into consecutive subsequences"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Split array into consecutive subsequences<span class="text-gray-700 font-medium text-base"> - August 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/reduce-array-size-to-the-half"
+            title="Read more - Reduce array size to the half"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Reduce array size to the half<span class="text-gray-700 font-medium text-base"> - August 18, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/unique-morse-code-words"
+            title="Read more - Unique morse code words"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Unique morse code words<span class="text-gray-700 font-medium text-base"> - August 17, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/first-unique-character-in-a-string"
+            title="Read more - First unique character in a string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            First unique character in a string<span class="text-gray-700 font-medium text-base"> - August 16, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/largest-number-at-least-twice-of-others"
+            title="Read more - Largest number at least twice of others"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Largest number at least twice of others<span class="text-gray-700 font-medium text-base"> - July 31, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/word-subsets"
+            title="Read more - Word subsets"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Word subsets<span class="text-gray-700 font-medium text-base"> - July 30, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/find-and-replace-pattern"
+            title="Read more - Find and replace pattern"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Find and replace pattern<span class="text-gray-700 font-medium text-base"> - July 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/longest-consecutive-sequence"
+            title="Read more - Longest consecutive sequence"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Longest consecutive sequence<span class="text-gray-700 font-medium text-base"> - July 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/search-suggestions-system"
+            title="Read more - Search suggestions system"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Search suggestions system<span class="text-gray-700 font-medium text-base"> - July 29, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/pascals-triangle"
+            title="Read more - Pascals triangle"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Pascals triangle<span class="text-gray-700 font-medium text-base"> - July 19, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/encode-and-decode-string"
+            title="Read more - Encode and decode string"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Encode and decode string<span class="text-gray-700 font-medium text-base"> - July 18, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/product-of-array-except-self"
+            title="Read more - Product of array except self"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Product of array except self<span class="text-gray-700 font-medium text-base"> - July 13, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/valid-sudoku"
+            title="Read more - Valid sudoku"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Valid sudoku<span class="text-gray-700 font-medium text-base"> - July 13, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/group-anagrams"
+            title="Read more - Group anagrams"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Group anagrams<span class="text-gray-700 font-medium text-base"> - July 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/top-k-frequent-elements"
+            title="Read more - Top k frequent element"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Top k frequent element<span class="text-gray-700 font-medium text-base"> - July 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/valid-anagram"
+            title="Read more - Valid anagram"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Valid anagram<span class="text-gray-700 font-medium text-base"> - July 12, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/contains-duplicate"
+            title="Read more - Contains duplicate"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Contains duplicate<span class="text-gray-700 font-medium text-base"> - July 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            <div class="flex flex-col mb-4">
+    <p class="m-0">
+        <a
+            href="https://one-problem-a-day.milon.im/problems/two-sum"
+            title="Read more - Two sum"
+            class="text-2xl text-gray-900 font-semibold"
+        >
+            Two sum<span class="text-gray-700 font-medium text-base"> - July 10, 2022</span>
+        </a> 
+    </p>
+</div>
+         
+            </main>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-none">
+                <li class="md:mr-2">
+                    &copy; <a href="/" title="One problem a day">One problem a day</a> 2026.
+                </li>
+            </ul>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b0c78f41caeb91e04be3118d364810dc"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+    </body>
+</html>
