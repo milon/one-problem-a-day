@@ -8,12 +8,18 @@ class GenerateSearchIndex
 {
     public function handle(Jigsaw $jigsaw)
     {
-        $data = collect($jigsaw->getCollection('posts')->map(function ($page) use ($jigsaw) {
+        $data = collect($jigsaw->getCollection('posts')->map(function ($page) {
+            $complexity = $page->getComplexity();
+
             return [
                 'title' => $page->title,
                 'categories' => $page->categories,
-                'link' => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
+                'link' => $page->getPath(),
                 'snippet' => $page->getExcerpt(),
+                'date' => $page->getDate()->format('Y-m-d'),
+                'time' => $complexity['time'],
+                'space' => $complexity['space'],
+                'complexity' => $complexity['bucket'],
             ];
         })->values());
 

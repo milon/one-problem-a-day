@@ -1,24 +1,19 @@
 {
     "private": true,
     "scripts": {
-        "dev": "mix",
-        "watch": "mix watch",
-        "prod": "mix --production",
-        "production": "mix --production"
+        "build": "bun run build:assets && vendor/bin/jigsaw build production",
+        "build:assets": "vite build",
+        "dev": "bun run build:assets && vendor/bin/jigsaw build local",
+        "watch": "bun run build:assets && concurrently \"vite build --watch\" \"vendor/bin/jigsaw build local --watch\"",
+        "prod": "vite build",
+        "production": "vite build"
     },
     "devDependencies": {
-        "axios": "^0.21.1",
-        "browser-sync": "^2.27.4",
-        "browser-sync-webpack-plugin": "^2.3.0",
-        "fuse.js": "^6.4.6",
-        "highlight.js": "^10.5.0",
-        "laravel-mix": "^6.0.39",
-        "laravel-mix-jigsaw": "^2.0.0",
-        "postcss": "^8.3.5",
-        "postcss-import": "^14.0.2",
-        "tailwindcss": "^2.2.4",
-        "vue": "^2.6.12",
-        "vue-loader": "^15.9.6",
-        "vue-template-compiler": "^2.6.12"
+        "@tailwindcss/vite": "^4.3.3",
+        "concurrently": "^10.0.5",
+        "fuse.js": "^7.5.0",
+        "highlight.js": "^11.12.0",
+        "tailwindcss": "^4.3.3",
+        "vite": "^6.4.3"
     }
 }

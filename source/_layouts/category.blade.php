@@ -1,15 +1,10 @@
 @extends('_layouts.main')
 
 @section('body')
-    <h1>{{ $page->title }} <span class="text-xl">({{ count($page->posts($posts)) }})</span></h1>
-
-    <div class="text-2xl border-b border-indigo-200 mb-6 pb-6">
-        @yield('content')
-    </div>
-
-    @forelse ($page->posts($posts) as $post)
-        @include('_components.category-preview-inline')         
-    @empty
-        <p>No posts yet!</p>
-    @endforelse
+    @include('_components.problem-index', [
+        'problemPosts' => $page->posts($posts),
+        'indexTitle' => $page->title,
+        'indexDescription' => $page->description ?? 'Browse problems in this category.',
+        'selectedCategory' => $page->getFilename(),
+    ])
 @stop

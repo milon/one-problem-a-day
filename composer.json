@@ -8,5 +8,19 @@
         "psr-4": {
             "App\\Listeners\\": "listeners/"
         }
+    },
+    "scripts": {
+        "build:prod": [
+            "bun run build:assets",
+            "jigsaw build production"
+        ],
+        "build": [
+            "bun run build:assets",
+            "jigsaw build local"
+        ]
+    },
+    "scripts-descriptions": {
+        "build:prod": "Compile the frontend assets and build the production site into build_production/.",
+        "build": "Compile the frontend assets and build the local site into build_local/."
     }
 }

@@ -1,10 +1,44 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import "tailwindcss";
+@import "./base.css";
+@import "./blog.css";
 
-/* Code syntax highlighting, powered by https://highlightjs.org */
-@import 'highlight.js/styles/a11y-light.css';
+@source "../../**/*.{blade.php,md,js}";
 
-@import 'base';
-@import 'blog';
+@custom-variant dark (&:where(.dark, .dark *));
 
-@import 'tailwindcss/utilities';
+/*
+ * Colors resolve to the Catppuccin role variables declared in base.css, so every
+ * utility below follows Latte in light mode and Frappe in dark mode.
+ */
+@theme {
+    --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+    --color-white: var(--ui-surface);
+
+    --color-slate-50: var(--ui-neutral-50);
+    --color-slate-100: var(--ui-neutral-100);
+    --color-slate-200: var(--ui-neutral-200);
+    --color-slate-300: var(--ui-neutral-300);
+    --color-slate-400: var(--ui-neutral-400);
+    --color-slate-500: var(--ui-neutral-500);
+    --color-slate-600: var(--ui-neutral-600);
+    --color-slate-700: var(--ui-neutral-700);
+    --color-slate-800: var(--ui-neutral-800);
+    --color-slate-900: var(--ui-neutral-900);
+    --color-slate-950: var(--ui-neutral-950);
+
+    --color-brand-50: var(--ui-accent-soft);
+    --color-brand-100: var(--ui-accent-soft-strong);
+    --color-brand-500: var(--ui-accent);
+    --color-brand-600: var(--ui-accent-fill);
+    --color-brand-700: var(--ui-accent-fill-hover);
+
+    --color-blue-300: var(--ui-accent-hover);
+    --color-blue-400: var(--ui-accent);
+    --color-blue-950: var(--ui-accent-soft);
+
+    --color-red-600: var(--ctp-red);
+
+    --shadow-panel: 0 1px 2px rgb(76 79 105 / 0.06), 0 12px 40px rgb(76 79 105 / 0.08);
+}

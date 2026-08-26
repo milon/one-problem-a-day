@@ -1,21 +1,21 @@
 @extends('_layouts.main')
 
 @section('body')
-    @if ($page->cover_image)
-        <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
-    @endif
+    <article class="mx-auto max-w-3xl">
+        <header class="mb-10 border-b border-slate-200 pb-8 dark:border-slate-800">
+            <p class="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-blue-400">Reference</p>
+            <h1 class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl dark:text-white">{{ $page->title }}</h1>
+            @if ($page->tags)
+                <div class="mt-5 flex flex-wrap gap-2">
+                    @foreach ($page->tags as $tag)
+                        <span class="rounded-md bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700 dark:bg-blue-950 dark:text-blue-300">{{ $tag }}</span>
+                    @endforeach
+                </div>
+            @endif
+        </header>
 
-    <h1 class="leading-none mb-2">{{ $page->title }}</h1>
-
-    @if ($page->tags)
-        @foreach ($page->tags as $i => $tag)
-            <span class="inline-block bg-gray-300 hover:bg-indigo-200 leading-loose tracking-wide text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px">
-                {{ $tag }}
-            </span>
-        @endforeach
-    @endif
-
-    <div class="border-b border-indigo-200 mb-10 pb-4" v-pre>
-        @yield('content')
-    </div>
+        <div class="prose-content">
+            @yield('content')
+        </div>
+    </article>
 @endsection
