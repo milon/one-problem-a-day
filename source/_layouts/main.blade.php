@@ -21,22 +21,14 @@
             document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (!savedTheme && prefersDark));
             document.documentElement.classList.toggle('light', savedTheme === 'light');
         </script>
+        <style>
+            html { background: #e6e9ef; }
+            html.dark { background: #303446; }
+        </style>
 
-        @if ($page->production && $page->gaTrackingId)
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $page->gaTrackingId }}"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', '{{ $page->gaTrackingId }}');
-            </script>
-        @endif
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preload" href="/assets/fonts/nunito-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ $page->viteAsset('source/_assets/js/main.js', 'css') }}" as="style">
+        <link rel="preload" href="/assets/images/logo.svg" as="image">
         <link rel="stylesheet" href="{{ $page->viteAsset('source/_assets/js/main.js', 'css') }}">
     </head>
 
@@ -56,7 +48,7 @@
                 </button>
 
                 <a href="/" title="{{ $page->siteName }} home" class="flex min-w-0 items-center gap-3 no-underline">
-                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="{{ $page->siteName }} logo" />
+                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="{{ $page->siteName }} logo" width="36" height="36" fetchpriority="high" decoding="async" />
                     <span class="hidden truncate text-base font-extrabold tracking-tight text-slate-950 sm:block dark:text-white">{{ $page->siteName }}</span>
                 </a>
 
@@ -103,6 +95,15 @@
         @include('_components.search-dialog')
 
         <script type="module" src="{{ $page->viteAsset('source/_assets/js/main.js') }}"></script>
+        @if ($page->production && $page->gaTrackingId)
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $page->gaTrackingId }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '{{ $page->gaTrackingId }}');
+            </script>
+        @endif
         @stack('scripts')
     </body>
 </html>

@@ -1,13 +1,14 @@
-import hljs from 'highlight.js/lib/core';
-import python from 'highlight.js/lib/languages/python';
-import Fuse from 'fuse.js';
 import '../css/main.css';
 
-hljs.registerLanguage('python', python);
+const highlightBlocks = document.querySelectorAll('pre code');
 
-document.querySelectorAll('pre code').forEach((block) => {
-    hljs.highlightElement(block);
-});
+if (highlightBlocks.length) {
+    import('highlight.js/lib/core').then(async ({ default: hljs }) => {
+        const { default: python } = await import('highlight.js/lib/languages/python');
+        hljs.registerLanguage('python', python);
+        highlightBlocks.forEach((block) => hljs.highlightElement(block));
+    });
+}
 
 const escapeHtml = (value) => String(value ?? '')
     .replaceAll('&', '&amp;')
@@ -58,7 +59,10 @@ const loadSearchIndex = async () => {
         return searchIndex;
     }
 
-    const response = await fetch('/index.json');
+    const [{ default: Fuse }, response] = await Promise.all([
+        import('fuse.js'),
+        fetch('/index.json'),
+    ]);
     const items = await response.json();
     searchIndex = new Fuse(items, {
         threshold: 0.35,
