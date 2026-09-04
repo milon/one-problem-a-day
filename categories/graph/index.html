@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="All problems that are about graph.">
+
+        <meta property="og:title" content="Graph | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/categories/graph"/>
+        <meta property="og:description" content="All problems that are about graph." />
+
+        <title>Graph | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+        <script>
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (!savedTheme && prefersDark));
+            document.documentElement.classList.toggle('light', savedTheme === 'light');
+        </script>
+        <style>
+            html { background: #e6e9ef; }
+            html.dark { background: #303446; }
+        </style>
+
+        <link rel="preload" href="/assets/fonts/nunito-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/assets/build/assets/main-5SRq9VF6.css" as="style">
+        <link rel="preload" href="/assets/images/logo.svg" as="image">
+        <link rel="stylesheet" href="/assets/build/assets/main-5SRq9VF6.css">
+    </head>
+
+    <body class="min-h-full">
+        <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90" role="banner">
+            <div class="mx-auto flex h-16 max-w-screen-2xl items-center gap-3 px-4 sm:px-6">
+                <button
+                    type="button"
+                    data-sidebar-toggle
+                    class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                    aria-label="Open category navigation"
+                    aria-expanded="false"
+                >
+                    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <a href="/" title="One problem a day home" class="flex min-w-0 items-center gap-3 no-underline">
+                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="One problem a day logo" width="36" height="36" fetchpriority="high" decoding="async" />
+                    <span class="hidden truncate text-base font-extrabold tracking-tight text-slate-950 sm:block dark:text-white">One problem a day</span>
+                </a>
+
+                <div class="ml-auto flex items-center gap-2">
+                    <button
+                        type="button"
+                        data-search-open
+                        class="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 hover:border-slate-300 hover:bg-white sm:w-72 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800"
+                    >
+                        <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+                        </svg>
+                        <span class="truncate">Search problems</span>
+                        <kbd class="ml-auto hidden shrink-0 rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[11px] leading-none dark:border-slate-700 dark:bg-slate-800 sm:inline-block">/</kbd>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-theme-toggle
+                        class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                        aria-label="Toggle dark mode"
+                    >
+                        <svg class="size-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+                        </svg>
+                        <svg class="hidden size-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto flex max-w-screen-2xl">
+            <div data-sidebar-backdrop class="fixed inset-0 z-30 hidden bg-slate-950/50 lg:hidden"></div>
+
+<aside
+    data-sidebar
+    class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full overflow-y-auto border-r border-slate-200 bg-white px-4 pb-8 pt-5 transition-transform lg:sticky lg:top-16 lg:z-20 lg:h-[calc(100vh-4rem)] lg:w-64 lg:translate-x-0 lg:bg-slate-50 dark:border-slate-800 dark:bg-slate-950"
+    aria-label="Problem navigation"
+>
+    <div class="mb-5 flex items-center justify-between px-2 lg:hidden">
+        <span class="font-bold text-slate-950 dark:text-white">Browse problems</span>
+        <button type="button" data-sidebar-close class="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Close navigation">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav>
+        <div class="space-y-1">
+            <a
+                href="/"
+                class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >
+                All problems
+                <span class="rounded-md bg-white/70 px-1.5 py-0.5 text-xs tabular-nums dark:bg-slate-800">944</span>
+            </a>
+            <a
+                href="/about"
+                class="block rounded-lg px-3 py-2 text-sm font-semibold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >About this project</a>
+        </div>
+
+        <div class="mt-8">
+            <p class="mb-2 px-3 text-xs font-extrabold uppercase tracking-widest text-slate-400">Categories</p>
+            <ul class="m-0 list-none space-y-0.5 p-0">
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/array-and-hashmap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Array &amp; Hashmap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">217</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/backtracking"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Backtracking</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">33</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/binary-search"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Binary Search</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">27</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/bit-manipulation"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Bit Manipulataion</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">25</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/design"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Design</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">46</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/dynamic-programming"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Dynamic Programming</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/graph"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline bg-brand-100 text-brand-700 dark:bg-blue-950 dark:text-blue-300"
+                        >
+                            <span class="truncate">Graph</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">74</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/greedy"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Greedy</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">59</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/heap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Heap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">44</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/intervals"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Intervals</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">16</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/linked-list"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Linked List</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">50</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/math-and-geometry"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Math &amp; Germetry</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/queue"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Queue</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">15</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/sliding-window"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Sliding Window</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">29</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/stack"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Stack</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">48</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/tree"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Tree</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">122</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/trie"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Trie</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">14</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/two-pointers"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Two Pointers</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">31</span>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </nav>
+
+    <div class="mt-8 border-t border-slate-200 px-3 pt-5 text-xs leading-5 text-slate-400 dark:border-slate-800">
+        <p>&copy; 2026 One problem a day</p>
+    </div>
+</aside>
+
+            <main role="main" class="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-10 lg:py-12">
+                <div class="mx-auto max-w-6xl">
+                        <section data-problem-index class="scroll-mt-24">
+    <div class="mb-8 flex flex-col gap-5 border-b border-slate-200 pb-8 dark:border-slate-800 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+            <p class="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-blue-400">Problem library</p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl dark:text-white">Graph</h1>
+            <p class="mt-3 max-w-2xl text-slate-500 dark:text-slate-400">All problems that are about graph.</p>
+        </div>
+        <div class="shrink-0 font-mono text-sm text-slate-500">
+            <strong data-visible-count class="text-slate-950 dark:text-white">74</strong>
+            <span> / 74 problems</span>
+        </div>
+    </div>
+
+    <div class="mb-5 grid gap-3 sm:grid-cols-[minmax(0,1fr)_12rem_12rem]">
+        <label class="relative">
+            <span class="sr-only">Filter problems</span>
+            <svg class="pointer-events-none absolute top-3 left-3.5 size-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input
+                data-problem-query
+                type="search"
+                placeholder="Filter by problem name..."
+                class="h-10 w-full rounded-lg border border-slate-200 bg-white pr-3 pl-10 text-sm text-slate-950 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:focus:ring-blue-950"
+            >
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by category</span>
+            <select data-problem-category class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All categories</option>
+                                    <option value="array-and-hashmap" >Array &amp; Hashmap</option>
+                                    <option value="backtracking" >Backtracking</option>
+                                    <option value="binary-search" >Binary Search</option>
+                                    <option value="bit-manipulation" >Bit Manipulataion</option>
+                                    <option value="design" >Design</option>
+                                    <option value="dynamic-programming" >Dynamic Programming</option>
+                                    <option value="graph" selected>Graph</option>
+                                    <option value="greedy" >Greedy</option>
+                                    <option value="heap" >Heap</option>
+                                    <option value="intervals" >Intervals</option>
+                                    <option value="linked-list" >Linked List</option>
+                                    <option value="math-and-geometry" >Math &amp; Germetry</option>
+                                    <option value="queue" >Queue</option>
+                                    <option value="sliding-window" >Sliding Window</option>
+                                    <option value="stack" >Stack</option>
+                                    <option value="tree" >Tree</option>
+                                    <option value="trie" >Trie</option>
+                                    <option value="two-pointers" >Two Pointers</option>
+                            </select>
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by time complexity</span>
+            <select data-problem-complexity class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All complexities</option>
+                <option value="constant">Constant</option>
+                <option value="logarithmic">Logarithmic</option>
+                <option value="linear">Linear</option>
+                <option value="linearithmic">Linearithmic</option>
+                <option value="quadratic">Quadratic</option>
+                <option value="exponential">Exponential</option>
+                <option value="other">Other</option>
+                <option value="unknown">Not recorded</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-panel dark:border-slate-800 dark:bg-slate-900">
+        <div class="overflow-x-auto">
+            <table class="problem-table w-full border-collapse text-left text-sm">
+                <thead class="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:bg-slate-900/80">
+                    <tr>
+                        <th scope="col" data-sort="title" aria-sort="none" class="px-4 py-3.5 font-bold sm:px-5">Problem</th>
+                        <th scope="col" class="hidden px-4 py-3.5 font-bold md:table-cell">Category</th>
+                        <th scope="col" data-sort="complexity" aria-sort="none" class="hidden px-4 py-3.5 font-bold sm:table-cell">Time</th>
+                        <th scope="col" data-sort="date" aria-sort="descending" class="px-4 py-3.5 text-right font-bold sm:px-5">Solved</th>
+                    </tr>
+                </thead>
+                <tbody data-problem-rows class="divide-y divide-slate-100 dark:divide-slate-800">
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of increasing paths in a grid"
+                            data-categories="dynamic-programming,graph"
+                            data-complexity="other"
+                            data-date="2023-06-17"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-increasing-paths-in-a-grid" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of increasing paths in a grid</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">dynamic-programming</span>
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/dynamic-programming" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">dynamic programming</a>
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(m*n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jun 17, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="time needed to inform all employees"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2023-06-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/time-needed-to-inform-all-employees" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Time needed to inform all employees</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jun 2, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="shortest path in binary matrix"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2023-06-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/shortest-path-in-binary-matrix" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Shortest path in binary matrix</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jun 1, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="sentence similarity"
+                            data-categories="array-and-hashmap,graph"
+                            data-complexity="other"
+                            data-date="2023-02-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/sentence-similarity" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Sentence similarity</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">array-and-hashmap</span>
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/array-and-hashmap" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">array and hashmap</a>
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Feb 1, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find closest node to given two nodes"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2023-01-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-closest-node-to-given-two-nodes" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find closest node to given two nodes</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 25, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="lexicographically smallest equivalent string"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2023-01-14"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/lexicographically-smallest-equivalent-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Lexicographically smallest equivalent string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 14, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum time to collect all apples in a tree"
+                            data-categories="tree,graph"
+                            data-complexity="other"
+                            data-date="2023-01-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-time-to-collect-all-apples-in-a-tree" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum time to collect all apples in a tree</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">tree</span>
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/tree" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">tree</a>
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 11, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="check if there is a valid path in a grid"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2023-01-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/check-if-there-is-a-valid-path-in-a-grid" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Check if there is a valid path in a grid</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 4, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="k highest ranked items within a price range"
+                            data-categories="heap,graph"
+                            data-complexity="linearithmic"
+                            data-date="2023-01-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/k-highest-ranked-items-within-a-price-range" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">K highest ranked items within a price range</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">heap</span>
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/heap" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">heap</a>
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mnlog(mn))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 2, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="synonymous sentences"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-12-27"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/synonymous-sentences" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Synonymous sentences</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 27, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of distinct islands"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-12-24"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-distinct-islands" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of distinct islands</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 24, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximal network rank"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-12-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximal-network-rank" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximal network rank</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="possible bipartition"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-12-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/possible-bipartition" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Possible bipartition</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n+m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of closed islands"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-12-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-closed-islands" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of closed islands</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum cost to buy apples"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-12-07"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-cost-to-buy-apples" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum cost to buy apples</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 7, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find center of star graph"
+                            data-categories="graph"
+                            data-complexity="constant"
+                            data-date="2022-12-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-center-of-star-graph" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find center of star graph</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(1)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum score of a path between two cities"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-12-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-score-of-a-path-between-two-cities" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum score of a path between two cities</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of connected components in an undirected graph"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-12-03"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-connected-components-in-an-undirected-graph" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of connected components in an undirected graph</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 3, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="connecting cities with minimum cost"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-12-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/connecting-cities-with-minimum-cost" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Connecting cities with minimum cost</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 2, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum cost to reach city with discounts"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-12-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-cost-to-reach-city-with-discounts" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum cost to reach city with discounts</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 2, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="nearest exit from entrance in maze"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-11-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/nearest-exit-from-entrance-in-maze" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Nearest exit from entrance in maze</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of operations to make network connected"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-11-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-operations-to-make-network-connected" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of operations to make network connected</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of ways to arrive at destination"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-11-20"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-ways-to-arrive-at-destination" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of ways to arrive at destination</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 20, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="path with maximum probability"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-11-20"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/path-with-maximum-probability" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Path with maximum probability</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 20, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="frog position after t seconds"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-11-18"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/frog-position-after-t-seconds" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Frog position after t seconds</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 18, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="most stones removed with same row or column"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-11-14"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/most-stones-removed-with-same-row-or-column" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Most stones removed with same row or column</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 14, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum number of vertices to reach all nodes"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-11-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-number-of-vertices-to-reach-all-nodes" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum number of vertices to reach all nodes</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find all possible recipes from given supplies"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-10-31"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-all-possible-recipes-from-given-supplies" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find all possible recipes from given supplies</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 31, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="shortest path in a grid with obstacles elimination"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-10-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/shortest-path-in-a-grid-with-obstacles-elimination" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Shortest path in a grid with obstacles elimination</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minesweeper"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-10-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minesweeper" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minesweeper</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="shortest bridge"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-10-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/shortest-bridge" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Shortest bridge</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="open the lock"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-10-24"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/open-the-lock" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Open the lock</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 24, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="flood fill"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/flood-fill" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Flood fill</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="satisfiability of equality equations"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-09-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/satisfiability-of-equality-equations" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Satisfiability of equality equations</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum genetic mutation"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-genetic-mutation" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum genetic mutation</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="is graph bipartite"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-13"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/is-graph-bipartite" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Is graph bipartite</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 13, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find the city with the smallest number of neighbors at a threshold distance"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find the city with the smallest number of neighbors at a threshold distance</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^3)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of restricted paths from first to last node"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-restricted-paths-from-first-to-last-node" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of restricted paths from first to last node</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(elog(v))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="coloring a border"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/coloring-a-border" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Coloring a border</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="island perimeter"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/island-perimeter" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Island perimeter</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="keys and rooms"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-07"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/keys-and-rooms" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Keys and rooms</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 7, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="lexicographical numbers"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-09-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/lexicographical-numbers" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Lexicographical numbers</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="all ancestors of a node in a directed acyclic graph"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">All ancestors of a node in a directed acyclic graph</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="battleships in a board"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/battleships-in-a-board" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Battleships in a board</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="course schedule iv"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/course-schedule-iv" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Course schedule IV</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(q*(n+p))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="house robber iii"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/house-robber-iii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">House robber III</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of enclaves"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-enclaves" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of enclaves</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O((m*n)^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="evaluate division"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-09-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/evaluate-division" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Evaluate division</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2*q)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 4, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reachable nodes with restrictions"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reachable-nodes-with-restrictions" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reachable nodes with restrictions</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(ev)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 2, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum height trees"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-09-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-height-trees" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum height trees</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of islands"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-08-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-islands" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of islands</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of provinces"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-08-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-provinces" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of provinces</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="count servers that communicate"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/count-servers-that-communicate" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Count servers that communicate</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="word ladder ii"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-14"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/word-ladder-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Word ladder II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O((n+m)*l)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 14, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="redundant connection"
+                            data-categories="graph"
+                            data-complexity="linearithmic"
+                            data-date="2022-08-12"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/redundant-connection" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Redundant connection</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*log(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 12, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="walls and gates"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-12"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/walls-and-gates" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Walls and gates</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 12, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="word ladder"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-08-12"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/word-ladder" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Word ladder</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 12, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="pacific atlantic water flow"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/pacific-atlantic-water-flow" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Pacific atlantic water flow</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="surrounded regions"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/surrounded-regions" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Surrounded regions</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="clone graph"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-08"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/clone-graph" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Clone graph</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 8, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find eventual safe states"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-08-02"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-eventual-safe-states" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find eventual safe states</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 2, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="min cost to connect all points"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-07-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/min-cost-to-connect-all-points" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Min cost to connect all points</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2 * log(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reconstruct-itinerary"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reconstruct-itinerary" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">reconstruct-itinerary</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(E^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="swim in rising water"
+                            data-categories="graph"
+                            data-complexity="quadratic"
+                            data-date="2022-07-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/swim-in-rising-water" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Swim in rising water</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2 * log(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="alien dictionary"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/alien-dictionary" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Alien dictionary</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="cheapest flights within k stops"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/cheapest-flights-within-k-stops" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Cheapest flights within k stops</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*k)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="network delay time"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/network-delay-time" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Network delay time</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(E*logV)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="verifying an alien dictionary"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/verifying-an-alien-dictionary" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Verifying an alien dictionary</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*k)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="number of connected components in an undirected graph"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/number-of-connected-components-in-an-undirected-graph" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Number of connected components in an undirected graph</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*e)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="graph valid tree"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/graph-valid-tree" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Graph valid tree</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="course schedule ii"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/course-schedule-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Course schedule II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n+p)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="course schedule"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/course-schedule" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Course schedule</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n+p)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="rotting oranges"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-12"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/rotting-oranges" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Rotting oranges</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 12, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="max area of island"
+                            data-categories="graph"
+                            data-complexity="other"
+                            data-date="2022-07-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/max-area-of-island" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Max area of island</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">graph</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/graph" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">graph</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 11, 2022</td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+        <div data-problem-empty class="hidden px-6 py-16 text-center">
+            <p class="font-bold text-slate-900 dark:text-white">No matching problems</p>
+            <p class="mt-1 text-sm text-slate-500">Try clearing one of the filters.</p>
+        </div>
+    </div>
+
+    <nav data-problem-pager class="mt-5 hidden flex-col items-center justify-between gap-4 sm:flex-row" aria-label="Problem index pagination">
+        <p data-pager-info class="text-sm text-slate-500"></p>
+
+        <div class="flex items-center gap-1">
+            <button type="button" data-pager-prev class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Previous</button>
+            <div data-pager-pages class="flex items-center gap-1"></div>
+            <button type="button" data-pager-next class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Next</button>
+        </div>
+    </nav>
+</section>
+                </div>
+            </main>
+        </div>
+
+        <dialog
+    data-search-dialog
+    class="m-auto w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-0 text-left shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+>
+    <div class="flex items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-800">
+        <svg class="size-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <label for="global-search" class="sr-only">Search problems</label>
+        <input
+            id="global-search"
+            data-search-input
+            type="search"
+            autocomplete="off"
+            placeholder="Search by title, category, or solution..."
+            class="h-16 min-w-0 flex-1 border-0 bg-transparent text-base text-slate-950 outline-none placeholder:text-slate-400 dark:text-white"
+        >
+        <button type="button" data-search-close class="rounded-md border border-slate-200 px-2 py-1 text-xs font-semibold text-slate-500 dark:border-slate-700 dark:text-slate-400">ESC</button>
+    </div>
+
+    <div data-search-results class="max-h-[60vh] overflow-y-auto p-2">
+        <div class="px-3 py-10 text-center text-sm text-slate-500">
+            Start typing to search all 944 problems.
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4 border-t border-slate-200 px-4 py-2 text-[11px] font-semibold text-slate-400 dark:border-slate-800">
+        <span><kbd class="font-mono">↑↓</kbd> Navigate</span>
+        <span><kbd class="font-mono">↵</kbd> Open</span>
+        <span class="ml-auto">Powered by Fuse.js</span>
+    </div>
+</dialog>
+
+        <script type="module" src="/assets/build/assets/main-C_qERKyv.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+                    </body>
+</html>

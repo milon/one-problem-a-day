@@ -1,0 +1,34 @@
+{
+  "node_modules/fuse.js/dist/fuse.mjs": {
+    "file": "assets/fuse-BgFfDh5q.js",
+    "name": "fuse",
+    "src": "node_modules/fuse.js/dist/fuse.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/highlight.js/es/core.js": {
+    "file": "assets/core-CtK-02SP.js",
+    "name": "core",
+    "src": "node_modules/highlight.js/es/core.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/highlight.js/es/languages/python.js": {
+    "file": "assets/python-CXf-_D6G.js",
+    "name": "python",
+    "src": "node_modules/highlight.js/es/languages/python.js",
+    "isDynamicEntry": true
+  },
+  "source/_assets/js/main.js": {
+    "file": "assets/main-C_qERKyv.js",
+    "name": "main",
+    "src": "source/_assets/js/main.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/highlight.js/es/core.js",
+      "node_modules/highlight.js/es/languages/python.js",
+      "node_modules/fuse.js/dist/fuse.mjs"
+    ],
+    "css": [
+      "assets/main-5SRq9VF6.css"
+    ]
+  }
+}

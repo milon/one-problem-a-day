@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Solve one problem per day">
+
+        <meta property="og:title" content="Maximum number of vowels in a substring of given length | One problem a day"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/problems/maximum-number-of-vowels-in-a-substring-of-given-length"/>
+        <meta property="og:description" content="Solve one problem per day" />
+
+        <title>Maximum number of vowels in a substring of given length | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+        <script>
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (!savedTheme && prefersDark));
+            document.documentElement.classList.toggle('light', savedTheme === 'light');
+        </script>
+        <style>
+            html { background: #e6e9ef; }
+            html.dark { background: #303446; }
+        </style>
+
+        <link rel="preload" href="/assets/fonts/nunito-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/assets/build/assets/main-5SRq9VF6.css" as="style">
+        <link rel="preload" href="/assets/images/logo.svg" as="image">
+        <link rel="stylesheet" href="/assets/build/assets/main-5SRq9VF6.css">
+    </head>
+
+    <body class="min-h-full">
+        <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90" role="banner">
+            <div class="mx-auto flex h-16 max-w-screen-2xl items-center gap-3 px-4 sm:px-6">
+                <button
+                    type="button"
+                    data-sidebar-toggle
+                    class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                    aria-label="Open category navigation"
+                    aria-expanded="false"
+                >
+                    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <a href="/" title="One problem a day home" class="flex min-w-0 items-center gap-3 no-underline">
+                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="One problem a day logo" width="36" height="36" fetchpriority="high" decoding="async" />
+                    <span class="hidden truncate text-base font-extrabold tracking-tight text-slate-950 sm:block dark:text-white">One problem a day</span>
+                </a>
+
+                <div class="ml-auto flex items-center gap-2">
+                    <button
+                        type="button"
+                        data-search-open
+                        class="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 hover:border-slate-300 hover:bg-white sm:w-72 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800"
+                    >
+                        <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+                        </svg>
+                        <span class="truncate">Search problems</span>
+                        <kbd class="ml-auto hidden shrink-0 rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[11px] leading-none dark:border-slate-700 dark:bg-slate-800 sm:inline-block">/</kbd>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-theme-toggle
+                        class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                        aria-label="Toggle dark mode"
+                    >
+                        <svg class="size-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+                        </svg>
+                        <svg class="hidden size-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto flex max-w-screen-2xl">
+            <div data-sidebar-backdrop class="fixed inset-0 z-30 hidden bg-slate-950/50 lg:hidden"></div>
+
+<aside
+    data-sidebar
+    class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full overflow-y-auto border-r border-slate-200 bg-white px-4 pb-8 pt-5 transition-transform lg:sticky lg:top-16 lg:z-20 lg:h-[calc(100vh-4rem)] lg:w-64 lg:translate-x-0 lg:bg-slate-50 dark:border-slate-800 dark:bg-slate-950"
+    aria-label="Problem navigation"
+>
+    <div class="mb-5 flex items-center justify-between px-2 lg:hidden">
+        <span class="font-bold text-slate-950 dark:text-white">Browse problems</span>
+        <button type="button" data-sidebar-close class="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Close navigation">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav>
+        <div class="space-y-1">
+            <a
+                href="/"
+                class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >
+                All problems
+                <span class="rounded-md bg-white/70 px-1.5 py-0.5 text-xs tabular-nums dark:bg-slate-800">944</span>
+            </a>
+            <a
+                href="/about"
+                class="block rounded-lg px-3 py-2 text-sm font-semibold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >About this project</a>
+        </div>
+
+        <div class="mt-8">
+            <p class="mb-2 px-3 text-xs font-extrabold uppercase tracking-widest text-slate-400">Categories</p>
+            <ul class="m-0 list-none space-y-0.5 p-0">
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/array-and-hashmap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Array &amp; Hashmap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">217</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/backtracking"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Backtracking</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">33</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/binary-search"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Binary Search</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">27</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/bit-manipulation"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Bit Manipulataion</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">25</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/design"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Design</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">46</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/dynamic-programming"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Dynamic Programming</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/graph"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Graph</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">74</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/greedy"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Greedy</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">59</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/heap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Heap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">44</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/intervals"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Intervals</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">16</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/linked-list"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Linked List</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">50</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/math-and-geometry"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Math &amp; Germetry</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/queue"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Queue</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">15</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/sliding-window"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Sliding Window</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">29</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/stack"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Stack</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">48</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/tree"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Tree</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">122</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/trie"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Trie</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">14</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/two-pointers"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Two Pointers</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">31</span>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </nav>
+
+    <div class="mt-8 border-t border-slate-200 px-3 pt-5 text-xs leading-5 text-slate-400 dark:border-slate-800">
+        <p>&copy; 2026 One problem a day</p>
+    </div>
+</aside>
+
+            <main role="main" class="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-10 lg:py-12">
+                <div class="mx-auto max-w-6xl">
+                        
+    <nav class="mb-8 flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="/" class="font-semibold text-slate-500 no-underline hover:text-brand-600 dark:text-slate-400">Problems</a>
+        <svg class="size-3.5 text-slate-300 dark:text-slate-700" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>
+        <span class="truncate">Maximum number of vowels in a substring of given length</span>
+    </nav>
+
+    <div class="grid gap-12 xl:grid-cols-[minmax(0,1fr)_15rem]">
+        <article class="min-w-0">
+            <header class="mb-10 border-b border-slate-200 pb-8 dark:border-slate-800">
+                <div class="mb-4 flex flex-wrap items-center gap-2">
+                                            <a
+                            href="/categories/array-and-hashmap"
+                            class="rounded-md bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-700 no-underline hover:bg-brand-100 dark:bg-blue-950 dark:text-blue-300"
+                        >array and hashmap</a>
+                                        <span class="font-mono text-xs text-slate-400">May 5, 2023</span>
+                </div>
+
+                <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl dark:text-white">Maximum number of vowels in a substring of given length</h1>
+
+                <div class="mt-7 flex flex-wrap items-center gap-3">
+                                            <span class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+                            <span>Time</span>
+                            <code class="font-mono text-slate-900 dark:text-slate-100">O(n)</code>
+                        </span>
+                                                                <span class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+                            <span>Space</span>
+                            <code class="font-mono text-slate-900 dark:text-slate-100">O(1)</code>
+                        </span>
+                                                                <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/"
+                            class="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-3.5 py-2 text-xs font-bold text-white no-underline hover:bg-brand-700 dark:text-white"
+                        >
+                            Open original problem
+                            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            </svg>
+                        </a>
+                                    </div>
+            </header>
+
+            <div class="prose-content" data-post-content>
+                <p>We will first count the number of vowels in the whole string. Then we will use a sliding window to find the maximum number of vowels in a substring of given length. We will return the result.</p>
+
+<pre><code class="language-python">class Solution:
+    def maxVowels(self, s: str, k: int) -&gt; int:
+        vowels = {'a', 'e', 'i', 'o', 'u'}
+
+        count = 0
+        for i in range(k):
+            count += int(s[i] in vowels)
+
+        res = count
+        for i in range(k, len(s)):
+            count += int(s[i] in vowels)
+            count -= int(s[i - k] in vowels)
+            res = max(res, count)
+
+        return res
+</code></pre>
+
+<p>Time complexity: <code>O(n)</code> <br/>
+Space complexity: <code>O(1)</code></p>
+            </div>
+
+            <nav class="mt-14 grid gap-4 border-t border-slate-200 pt-8 sm:grid-cols-2 dark:border-slate-800" aria-label="Adjacent problems">
+                <div>
+                                            <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Previous problem</span>
+                        <a href="https://one-problem-a-day.milon.im/problems/substrings-that-begin-and-end-with-the-same-letter" class="mt-1 block font-bold text-slate-900 no-underline hover:text-brand-600 dark:text-white dark:hover:text-blue-400">&larr; Substrings that begin and end with the same letter</a>
+                                    </div>
+                <div class="text-right">
+                                            <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Next problem</span>
+                        <a href="https://one-problem-a-day.milon.im/problems/find-the-longest-valid-obstacle-course-at-each-position" class="mt-1 block font-bold text-slate-900 no-underline hover:text-brand-600 dark:text-white dark:hover:text-blue-400">Find the longest valid obstacle course at each position &rarr;</a>
+                                    </div>
+            </nav>
+        </article>
+
+        <aside data-toc-container class="hidden xl:block">
+            <div class="sticky top-24">
+                <p class="mb-3 text-xs font-extrabold uppercase tracking-widest text-slate-400">On this page</p>
+                <nav data-toc class="border-l border-slate-200 dark:border-slate-800" aria-label="Table of contents"></nav>
+            </div>
+        </aside>
+    </div>
+                </div>
+            </main>
+        </div>
+
+        <dialog
+    data-search-dialog
+    class="m-auto w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-0 text-left shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+>
+    <div class="flex items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-800">
+        <svg class="size-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <label for="global-search" class="sr-only">Search problems</label>
+        <input
+            id="global-search"
+            data-search-input
+            type="search"
+            autocomplete="off"
+            placeholder="Search by title, category, or solution..."
+            class="h-16 min-w-0 flex-1 border-0 bg-transparent text-base text-slate-950 outline-none placeholder:text-slate-400 dark:text-white"
+        >
+        <button type="button" data-search-close class="rounded-md border border-slate-200 px-2 py-1 text-xs font-semibold text-slate-500 dark:border-slate-700 dark:text-slate-400">ESC</button>
+    </div>
+
+    <div data-search-results class="max-h-[60vh] overflow-y-auto p-2">
+        <div class="px-3 py-10 text-center text-sm text-slate-500">
+            Start typing to search all 944 problems.
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4 border-t border-slate-200 px-4 py-2 text-[11px] font-semibold text-slate-400 dark:border-slate-800">
+        <span><kbd class="font-mono">↑↓</kbd> Navigate</span>
+        <span><kbd class="font-mono">↵</kbd> Open</span>
+        <span class="ml-auto">Powered by Fuse.js</span>
+    </div>
+</dialog>
+
+        <script type="module" src="/assets/build/assets/main-C_qERKyv.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+                    </body>
+</html>

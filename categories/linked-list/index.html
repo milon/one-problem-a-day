@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="All problems that are about linked list.">
+
+        <meta property="og:title" content="Linked List | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/categories/linked-list"/>
+        <meta property="og:description" content="All problems that are about linked list." />
+
+        <title>Linked List | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+        <script>
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (!savedTheme && prefersDark));
+            document.documentElement.classList.toggle('light', savedTheme === 'light');
+        </script>
+        <style>
+            html { background: #e6e9ef; }
+            html.dark { background: #303446; }
+        </style>
+
+        <link rel="preload" href="/assets/fonts/nunito-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/assets/build/assets/main-5SRq9VF6.css" as="style">
+        <link rel="preload" href="/assets/images/logo.svg" as="image">
+        <link rel="stylesheet" href="/assets/build/assets/main-5SRq9VF6.css">
+    </head>
+
+    <body class="min-h-full">
+        <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90" role="banner">
+            <div class="mx-auto flex h-16 max-w-screen-2xl items-center gap-3 px-4 sm:px-6">
+                <button
+                    type="button"
+                    data-sidebar-toggle
+                    class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                    aria-label="Open category navigation"
+                    aria-expanded="false"
+                >
+                    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <a href="/" title="One problem a day home" class="flex min-w-0 items-center gap-3 no-underline">
+                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="One problem a day logo" width="36" height="36" fetchpriority="high" decoding="async" />
+                    <span class="hidden truncate text-base font-extrabold tracking-tight text-slate-950 sm:block dark:text-white">One problem a day</span>
+                </a>
+
+                <div class="ml-auto flex items-center gap-2">
+                    <button
+                        type="button"
+                        data-search-open
+                        class="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 hover:border-slate-300 hover:bg-white sm:w-72 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800"
+                    >
+                        <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+                        </svg>
+                        <span class="truncate">Search problems</span>
+                        <kbd class="ml-auto hidden shrink-0 rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[11px] leading-none dark:border-slate-700 dark:bg-slate-800 sm:inline-block">/</kbd>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-theme-toggle
+                        class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                        aria-label="Toggle dark mode"
+                    >
+                        <svg class="size-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+                        </svg>
+                        <svg class="hidden size-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto flex max-w-screen-2xl">
+            <div data-sidebar-backdrop class="fixed inset-0 z-30 hidden bg-slate-950/50 lg:hidden"></div>
+
+<aside
+    data-sidebar
+    class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full overflow-y-auto border-r border-slate-200 bg-white px-4 pb-8 pt-5 transition-transform lg:sticky lg:top-16 lg:z-20 lg:h-[calc(100vh-4rem)] lg:w-64 lg:translate-x-0 lg:bg-slate-50 dark:border-slate-800 dark:bg-slate-950"
+    aria-label="Problem navigation"
+>
+    <div class="mb-5 flex items-center justify-between px-2 lg:hidden">
+        <span class="font-bold text-slate-950 dark:text-white">Browse problems</span>
+        <button type="button" data-sidebar-close class="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Close navigation">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav>
+        <div class="space-y-1">
+            <a
+                href="/"
+                class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >
+                All problems
+                <span class="rounded-md bg-white/70 px-1.5 py-0.5 text-xs tabular-nums dark:bg-slate-800">944</span>
+            </a>
+            <a
+                href="/about"
+                class="block rounded-lg px-3 py-2 text-sm font-semibold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >About this project</a>
+        </div>
+
+        <div class="mt-8">
+            <p class="mb-2 px-3 text-xs font-extrabold uppercase tracking-widest text-slate-400">Categories</p>
+            <ul class="m-0 list-none space-y-0.5 p-0">
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/array-and-hashmap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Array &amp; Hashmap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">217</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/backtracking"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Backtracking</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">33</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/binary-search"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Binary Search</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">27</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/bit-manipulation"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Bit Manipulataion</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">25</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/design"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Design</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">46</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/dynamic-programming"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Dynamic Programming</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/graph"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Graph</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">74</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/greedy"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Greedy</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">59</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/heap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Heap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">44</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/intervals"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Intervals</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">16</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/linked-list"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline bg-brand-100 text-brand-700 dark:bg-blue-950 dark:text-blue-300"
+                        >
+                            <span class="truncate">Linked List</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">50</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/math-and-geometry"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Math &amp; Germetry</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/queue"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Queue</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">15</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/sliding-window"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Sliding Window</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">29</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/stack"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Stack</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">48</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/tree"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Tree</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">122</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/trie"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Trie</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">14</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/two-pointers"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Two Pointers</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">31</span>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </nav>
+
+    <div class="mt-8 border-t border-slate-200 px-3 pt-5 text-xs leading-5 text-slate-400 dark:border-slate-800">
+        <p>&copy; 2026 One problem a day</p>
+    </div>
+</aside>
+
+            <main role="main" class="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-10 lg:py-12">
+                <div class="mx-auto max-w-6xl">
+                        <section data-problem-index class="scroll-mt-24">
+    <div class="mb-8 flex flex-col gap-5 border-b border-slate-200 pb-8 dark:border-slate-800 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+            <p class="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-blue-400">Problem library</p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl dark:text-white">Linked List</h1>
+            <p class="mt-3 max-w-2xl text-slate-500 dark:text-slate-400">All problems that are about linked list.</p>
+        </div>
+        <div class="shrink-0 font-mono text-sm text-slate-500">
+            <strong data-visible-count class="text-slate-950 dark:text-white">50</strong>
+            <span> / 50 problems</span>
+        </div>
+    </div>
+
+    <div class="mb-5 grid gap-3 sm:grid-cols-[minmax(0,1fr)_12rem_12rem]">
+        <label class="relative">
+            <span class="sr-only">Filter problems</span>
+            <svg class="pointer-events-none absolute top-3 left-3.5 size-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input
+                data-problem-query
+                type="search"
+                placeholder="Filter by problem name..."
+                class="h-10 w-full rounded-lg border border-slate-200 bg-white pr-3 pl-10 text-sm text-slate-950 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:focus:ring-blue-950"
+            >
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by category</span>
+            <select data-problem-category class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All categories</option>
+                                    <option value="array-and-hashmap" >Array &amp; Hashmap</option>
+                                    <option value="backtracking" >Backtracking</option>
+                                    <option value="binary-search" >Binary Search</option>
+                                    <option value="bit-manipulation" >Bit Manipulataion</option>
+                                    <option value="design" >Design</option>
+                                    <option value="dynamic-programming" >Dynamic Programming</option>
+                                    <option value="graph" >Graph</option>
+                                    <option value="greedy" >Greedy</option>
+                                    <option value="heap" >Heap</option>
+                                    <option value="intervals" >Intervals</option>
+                                    <option value="linked-list" selected>Linked List</option>
+                                    <option value="math-and-geometry" >Math &amp; Germetry</option>
+                                    <option value="queue" >Queue</option>
+                                    <option value="sliding-window" >Sliding Window</option>
+                                    <option value="stack" >Stack</option>
+                                    <option value="tree" >Tree</option>
+                                    <option value="trie" >Trie</option>
+                                    <option value="two-pointers" >Two Pointers</option>
+                            </select>
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by time complexity</span>
+            <select data-problem-complexity class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All complexities</option>
+                <option value="constant">Constant</option>
+                <option value="logarithmic">Logarithmic</option>
+                <option value="linear">Linear</option>
+                <option value="linearithmic">Linearithmic</option>
+                <option value="quadratic">Quadratic</option>
+                <option value="exponential">Exponential</option>
+                <option value="other">Other</option>
+                <option value="unknown">Not recorded</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-panel dark:border-slate-800 dark:bg-slate-900">
+        <div class="overflow-x-auto">
+            <table class="problem-table w-full border-collapse text-left text-sm">
+                <thead class="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:bg-slate-900/80">
+                    <tr>
+                        <th scope="col" data-sort="title" aria-sort="none" class="px-4 py-3.5 font-bold sm:px-5">Problem</th>
+                        <th scope="col" class="hidden px-4 py-3.5 font-bold md:table-cell">Category</th>
+                        <th scope="col" data-sort="complexity" aria-sort="none" class="hidden px-4 py-3.5 font-bold sm:table-cell">Time</th>
+                        <th scope="col" data-sort="date" aria-sort="descending" class="px-4 py-3.5 text-right font-bold sm:px-5">Solved</th>
+                    </tr>
+                </thead>
+                <tbody data-problem-rows class="divide-y divide-slate-100 dark:divide-slate-800">
+                                                                    <tr
+                            data-problem-row
+                            data-title="split a circular linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2023-05-22"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/split-a-circular-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Split a circular linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">May 22, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="lfu cache"
+                            data-categories="linked-list,design"
+                            data-complexity="constant"
+                            data-date="2023-01-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/lfu-cache" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">LFU cache</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(1)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 29, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="convert binary search tree to sorted doubly linked list"
+                            data-categories="linked-list,tree"
+                            data-complexity="other"
+                            data-date="2022-12-23"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/convert-binary-search-tree-to-sorted-doubly-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Convert binary search tree to sorted doubly linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">tree</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/tree" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">tree</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 23, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="flatten a multilevel doubly linked list"
+                            data-categories="linked-list,tree"
+                            data-complexity="other"
+                            data-date="2022-12-23"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/flatten-a-multilevel-doubly-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Flatten a multilevel doubly linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">tree</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/tree" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">tree</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 23, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="delete n nodes after m nodes of a linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-12-19"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/delete-n-nodes-after-m-nodes-of-a-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Delete n nodes after m nodes of a linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 19, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove nodes from linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-12-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-nodes-from-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove nodes from linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="add two polynomials represented as linked lists"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-12-09"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/add-two-polynomials-represented-as-linked-lists" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Add two polynomials represented as linked lists</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 9, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="insert into a sorted circular linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-12-08"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/insert-into-a-sorted-circular-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Insert into a sorted circular linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 8, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="middle of the linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-12-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/middle-of-the-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Middle of the linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove duplicates from an unsorted linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-duplicates-from-an-unsorted-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove duplicates from an unsorted linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="print immutable linked list in reverse"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/print-immutable-linked-list-in-reverse" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Print immutable linked list in reverse</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove zero sum consecutive nodes from linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-zero-sum-consecutive-nodes-from-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove zero sum consecutive nodes from linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="design browser history"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/design-browser-history" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Design browser history</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximum twin sum of a linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximum-twin-sum-of-a-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximum twin sum of a linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="next greater node in linked list"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/next-greater-node-in-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Next greater node in linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="spiral matrix iv"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/spiral-matrix-iv" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Spiral matrix IV</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(mn)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="add two numbers ii"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/add-two-numbers-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Add two numbers II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="swapping nodes in a linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/swapping-nodes-in-a-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Swapping nodes in a linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="design linked list"
+                            data-categories="linked-list,design"
+                            data-complexity="unknown"
+                            data-date="2022-11-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/design-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">design linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">—</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="linked list in binary tree"
+                            data-categories="linked-list,tree"
+                            data-complexity="other"
+                            data-date="2022-11-21"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/linked-list-in-binary-tree" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Linked list in binary tree</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">tree</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/tree" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">tree</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 21, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="linked list components"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-18"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/linked-list-components" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Linked list components</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 18, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="merge in between linked lists"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-11-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/merge-in-between-linked-lists" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Merge in between linked lists</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="convert binary number in a linked list to integer"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-10-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/convert-binary-number-in-a-linked-list-to-integer" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Convert binary number in a linked list to integer</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="delete the middle node of a linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-10-14"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/delete-the-middle-node-of-a-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Delete the middle node of a linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 14, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reverse linked list ii"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-10-07"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reverse-linked-list-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reverse linked list II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 7, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="delete node in a linked list"
+                            data-categories="linked-list"
+                            data-complexity="constant"
+                            data-date="2022-10-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/delete-node-in-a-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Delete node in a linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(1)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 4, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="intersection of two linked lists"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-10-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/intersection-of-two-linked-lists" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Intersection of two linked lists</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove linked list elements"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-09-09"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-linked-list-elements" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove linked list elements</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 9, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="linked list random node"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-09-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/linked-list-random-node" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Linked list random node</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="merge nodes in between zeros"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-09-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/merge-nodes-in-between-zeros" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Merge nodes in between zeros</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="linked list cycle ii"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/linked-list-cycle-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Linked list cycle II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="sort list"
+                            data-categories="linked-list"
+                            data-complexity="linearithmic"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/sort-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Sort list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="insertion sort list"
+                            data-categories="linked-list"
+                            data-complexity="quadratic"
+                            data-date="2022-09-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/insertion-sort-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Insertion sort list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove duplicates from sorted list ii"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-duplicates-from-sorted-list-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove duplicates from sorted list II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove duplicates from sorted list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-duplicates-from-sorted-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove duplicates from sorted list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="swap nodes in pairs"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-27"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/swap-nodes-in-pairs" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Swap nodes in pairs</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 27, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="rotate list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-24"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/rotate-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Rotate list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 24, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="palindrome linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-23"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/palindrome-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Palindrome linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 23, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="merge k sorted lists"
+                            data-categories="linked-list"
+                            data-complexity="quadratic"
+                            data-date="2022-08-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/merge-k-sorted-lists" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Merge k sorted lists</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n^2)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reverse nodes in k group"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reverse-nodes-in-k-group" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reverse nodes in k group</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="lru cache"
+                            data-categories="linked-list,design"
+                            data-complexity="constant"
+                            data-date="2022-08-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/lru-cache" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">LRU cache</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(1)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="find the duplicate number"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/find-the-duplicate-number" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Find the duplicate number</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 4, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="add two numbers"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/add-two-numbers" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Add two numbers</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="copy list with random pointer"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/copy-list-with-random-pointer" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Copy list with random pointer</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reorder list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-08-01"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reorder-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reorder list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 1, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove nth node from end of list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-07-23"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-nth-node-from-end-of-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove nth node from end of list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 23, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="partition list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-07-22"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/partition-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Partition list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 22, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="linked list cycle"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-07-19"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/linked-list-cycle" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Linked list cycle</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 19, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="merge two sorted list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-07-15"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/merge-two-sorted-lists" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Merge two sorted list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 15, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reverse linked list"
+                            data-categories="linked-list"
+                            data-complexity="other"
+                            data-date="2022-07-15"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reverse-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reverse linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 15, 2022</td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+        <div data-problem-empty class="hidden px-6 py-16 text-center">
+            <p class="font-bold text-slate-900 dark:text-white">No matching problems</p>
+            <p class="mt-1 text-sm text-slate-500">Try clearing one of the filters.</p>
+        </div>
+    </div>
+
+    <nav data-problem-pager class="mt-5 hidden flex-col items-center justify-between gap-4 sm:flex-row" aria-label="Problem index pagination">
+        <p data-pager-info class="text-sm text-slate-500"></p>
+
+        <div class="flex items-center gap-1">
+            <button type="button" data-pager-prev class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Previous</button>
+            <div data-pager-pages class="flex items-center gap-1"></div>
+            <button type="button" data-pager-next class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Next</button>
+        </div>
+    </nav>
+</section>
+                </div>
+            </main>
+        </div>
+
+        <dialog
+    data-search-dialog
+    class="m-auto w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-0 text-left shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+>
+    <div class="flex items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-800">
+        <svg class="size-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <label for="global-search" class="sr-only">Search problems</label>
+        <input
+            id="global-search"
+            data-search-input
+            type="search"
+            autocomplete="off"
+            placeholder="Search by title, category, or solution..."
+            class="h-16 min-w-0 flex-1 border-0 bg-transparent text-base text-slate-950 outline-none placeholder:text-slate-400 dark:text-white"
+        >
+        <button type="button" data-search-close class="rounded-md border border-slate-200 px-2 py-1 text-xs font-semibold text-slate-500 dark:border-slate-700 dark:text-slate-400">ESC</button>
+    </div>
+
+    <div data-search-results class="max-h-[60vh] overflow-y-auto p-2">
+        <div class="px-3 py-10 text-center text-sm text-slate-500">
+            Start typing to search all 944 problems.
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4 border-t border-slate-200 px-4 py-2 text-[11px] font-semibold text-slate-400 dark:border-slate-800">
+        <span><kbd class="font-mono">↑↓</kbd> Navigate</span>
+        <span><kbd class="font-mono">↵</kbd> Open</span>
+        <span class="ml-auto">Powered by Fuse.js</span>
+    </div>
+</dialog>
+
+        <script type="module" src="/assets/build/assets/main-C_qERKyv.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+                    </body>
+</html>

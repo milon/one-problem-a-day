@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="All problems that are about stack.">
+
+        <meta property="og:title" content="Stack | One problem a day"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://one-problem-a-day.milon.im/categories/stack"/>
+        <meta property="og:description" content="All problems that are about stack." />
+
+        <title>Stack | One problem a day</title>
+
+        <link rel="home" href="https://one-problem-a-day.milon.im">
+        <link rel="icon" href="/assets/images/favicon.ico">
+        <script>
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark' || (!savedTheme && prefersDark));
+            document.documentElement.classList.toggle('light', savedTheme === 'light');
+        </script>
+        <style>
+            html { background: #e6e9ef; }
+            html.dark { background: #303446; }
+        </style>
+
+        <link rel="preload" href="/assets/fonts/nunito-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/assets/build/assets/main-5SRq9VF6.css" as="style">
+        <link rel="preload" href="/assets/images/logo.svg" as="image">
+        <link rel="stylesheet" href="/assets/build/assets/main-5SRq9VF6.css">
+    </head>
+
+    <body class="min-h-full">
+        <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90" role="banner">
+            <div class="mx-auto flex h-16 max-w-screen-2xl items-center gap-3 px-4 sm:px-6">
+                <button
+                    type="button"
+                    data-sidebar-toggle
+                    class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                    aria-label="Open category navigation"
+                    aria-expanded="false"
+                >
+                    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <a href="/" title="One problem a day home" class="flex min-w-0 items-center gap-3 no-underline">
+                    <img class="size-9 shrink-0" src="/assets/images/logo.svg" alt="One problem a day logo" width="36" height="36" fetchpriority="high" decoding="async" />
+                    <span class="hidden truncate text-base font-extrabold tracking-tight text-slate-950 sm:block dark:text-white">One problem a day</span>
+                </a>
+
+                <div class="ml-auto flex items-center gap-2">
+                    <button
+                        type="button"
+                        data-search-open
+                        class="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 hover:border-slate-300 hover:bg-white sm:w-72 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800"
+                    >
+                        <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+                        </svg>
+                        <span class="truncate">Search problems</span>
+                        <kbd class="ml-auto hidden shrink-0 rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[11px] leading-none dark:border-slate-700 dark:bg-slate-800 sm:inline-block">/</kbd>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-theme-toggle
+                        class="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900"
+                        aria-label="Toggle dark mode"
+                    >
+                        <svg class="size-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+                        </svg>
+                        <svg class="hidden size-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="mx-auto flex max-w-screen-2xl">
+            <div data-sidebar-backdrop class="fixed inset-0 z-30 hidden bg-slate-950/50 lg:hidden"></div>
+
+<aside
+    data-sidebar
+    class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full overflow-y-auto border-r border-slate-200 bg-white px-4 pb-8 pt-5 transition-transform lg:sticky lg:top-16 lg:z-20 lg:h-[calc(100vh-4rem)] lg:w-64 lg:translate-x-0 lg:bg-slate-50 dark:border-slate-800 dark:bg-slate-950"
+    aria-label="Problem navigation"
+>
+    <div class="mb-5 flex items-center justify-between px-2 lg:hidden">
+        <span class="font-bold text-slate-950 dark:text-white">Browse problems</span>
+        <button type="button" data-sidebar-close class="inline-flex size-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Close navigation">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav>
+        <div class="space-y-1">
+            <a
+                href="/"
+                class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >
+                All problems
+                <span class="rounded-md bg-white/70 px-1.5 py-0.5 text-xs tabular-nums dark:bg-slate-800">944</span>
+            </a>
+            <a
+                href="/about"
+                class="block rounded-lg px-3 py-2 text-sm font-semibold no-underline text-slate-700 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:bg-slate-900"
+            >About this project</a>
+        </div>
+
+        <div class="mt-8">
+            <p class="mb-2 px-3 text-xs font-extrabold uppercase tracking-widest text-slate-400">Categories</p>
+            <ul class="m-0 list-none space-y-0.5 p-0">
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/array-and-hashmap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Array &amp; Hashmap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">217</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/backtracking"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Backtracking</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">33</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/binary-search"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Binary Search</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">27</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/bit-manipulation"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Bit Manipulataion</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">25</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/design"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Design</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">46</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/dynamic-programming"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Dynamic Programming</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/graph"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Graph</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">74</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/greedy"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Greedy</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">59</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/heap"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Heap</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">44</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/intervals"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Intervals</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">16</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/linked-list"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Linked List</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">50</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/math-and-geometry"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Math &amp; Germetry</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">85</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/queue"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Queue</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">15</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/sliding-window"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Sliding Window</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">29</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/stack"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline bg-brand-100 text-brand-700 dark:bg-blue-950 dark:text-blue-300"
+                        >
+                            <span class="truncate">Stack</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">48</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/tree"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Tree</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">122</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/trie"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Trie</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">14</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a
+                            href="https://one-problem-a-day.milon.im/categories/two-pointers"
+                            class="flex items-center justify-between gap-3 rounded-lg px-3 py-1.5 text-sm font-semibold no-underline text-slate-600 hover:bg-slate-200/70 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white"
+                        >
+                            <span class="truncate">Two Pointers</span>
+                            <span class="text-xs font-medium tabular-nums text-slate-400">31</span>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </nav>
+
+    <div class="mt-8 border-t border-slate-200 px-3 pt-5 text-xs leading-5 text-slate-400 dark:border-slate-800">
+        <p>&copy; 2026 One problem a day</p>
+    </div>
+</aside>
+
+            <main role="main" class="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-10 lg:py-12">
+                <div class="mx-auto max-w-6xl">
+                        <section data-problem-index class="scroll-mt-24">
+    <div class="mb-8 flex flex-col gap-5 border-b border-slate-200 pb-8 dark:border-slate-800 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+            <p class="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-blue-400">Problem library</p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl dark:text-white">Stack</h1>
+            <p class="mt-3 max-w-2xl text-slate-500 dark:text-slate-400">All problems that are about stack.</p>
+        </div>
+        <div class="shrink-0 font-mono text-sm text-slate-500">
+            <strong data-visible-count class="text-slate-950 dark:text-white">48</strong>
+            <span> / 48 problems</span>
+        </div>
+    </div>
+
+    <div class="mb-5 grid gap-3 sm:grid-cols-[minmax(0,1fr)_12rem_12rem]">
+        <label class="relative">
+            <span class="sr-only">Filter problems</span>
+            <svg class="pointer-events-none absolute top-3 left-3.5 size-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input
+                data-problem-query
+                type="search"
+                placeholder="Filter by problem name..."
+                class="h-10 w-full rounded-lg border border-slate-200 bg-white pr-3 pl-10 text-sm text-slate-950 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-800 dark:bg-slate-900 dark:text-white dark:focus:ring-blue-950"
+            >
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by category</span>
+            <select data-problem-category class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All categories</option>
+                                    <option value="array-and-hashmap" >Array &amp; Hashmap</option>
+                                    <option value="backtracking" >Backtracking</option>
+                                    <option value="binary-search" >Binary Search</option>
+                                    <option value="bit-manipulation" >Bit Manipulataion</option>
+                                    <option value="design" >Design</option>
+                                    <option value="dynamic-programming" >Dynamic Programming</option>
+                                    <option value="graph" >Graph</option>
+                                    <option value="greedy" >Greedy</option>
+                                    <option value="heap" >Heap</option>
+                                    <option value="intervals" >Intervals</option>
+                                    <option value="linked-list" >Linked List</option>
+                                    <option value="math-and-geometry" >Math &amp; Germetry</option>
+                                    <option value="queue" >Queue</option>
+                                    <option value="sliding-window" >Sliding Window</option>
+                                    <option value="stack" selected>Stack</option>
+                                    <option value="tree" >Tree</option>
+                                    <option value="trie" >Trie</option>
+                                    <option value="two-pointers" >Two Pointers</option>
+                            </select>
+        </label>
+
+        <label>
+            <span class="sr-only">Filter by time complexity</span>
+            <select data-problem-complexity class="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-brand-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <option value="">All complexities</option>
+                <option value="constant">Constant</option>
+                <option value="logarithmic">Logarithmic</option>
+                <option value="linear">Linear</option>
+                <option value="linearithmic">Linearithmic</option>
+                <option value="quadratic">Quadratic</option>
+                <option value="exponential">Exponential</option>
+                <option value="other">Other</option>
+                <option value="unknown">Not recorded</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-panel dark:border-slate-800 dark:bg-slate-900">
+        <div class="overflow-x-auto">
+            <table class="problem-table w-full border-collapse text-left text-sm">
+                <thead class="border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:bg-slate-900/80">
+                    <tr>
+                        <th scope="col" data-sort="title" aria-sort="none" class="px-4 py-3.5 font-bold sm:px-5">Problem</th>
+                        <th scope="col" class="hidden px-4 py-3.5 font-bold md:table-cell">Category</th>
+                        <th scope="col" data-sort="complexity" aria-sort="none" class="hidden px-4 py-3.5 font-bold sm:table-cell">Time</th>
+                        <th scope="col" data-sort="date" aria-sort="descending" class="px-4 py-3.5 text-right font-bold sm:px-5">Solved</th>
+                    </tr>
+                </thead>
+                <tbody data-problem-rows class="divide-y divide-slate-100 dark:divide-slate-800">
+                                                                    <tr
+                            data-problem-row
+                            data-title="steps to make array non decreasing"
+                            data-categories="stack,dynamic-programming"
+                            data-complexity="other"
+                            data-date="2023-01-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/steps-to-make-array-non-decreasing" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Steps to make array non decreasing</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                            <span class="text-xs text-slate-400">dynamic-programming</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                            <a href="/categories/dynamic-programming" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">dynamic programming</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 5, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="finding the number of visible mountains"
+                            data-categories="stack"
+                            data-complexity="linearithmic"
+                            data-date="2023-01-03"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/finding-the-number-of-visible-mountains" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Finding the number of visible mountains</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jan 3, 2023</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum remove to make valid parentheses"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-remove-to-make-valid-parentheses" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum remove to make valid parentheses</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="backspace string compare"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-20"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/backspace-string-compare" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Backspace string compare</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n+m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 20, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximum number of books you can take"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-19"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximum-number-of-books-you-can-take" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximum number of books you can take</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 19, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="ternary expression parser"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-17"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/ternary-expression-parser" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Ternary expression parser</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 17, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximum nesting depth of two valid parentheses strings"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-12"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximum-nesting-depth-of-two-valid-parentheses-strings" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximum nesting depth of two valid parentheses strings</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 12, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="removing stars from a string"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-12-11"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/removing-stars-from-a-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Removing stars from a string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Dec 11, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="print immutable linked list in reverse"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/print-immutable-linked-list-in-reverse" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Print immutable linked list in reverse</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="check if word is valid after substitutions"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/check-if-word-is-valid-after-substitutions" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Check if word is valid after substitutions</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="next greater node in linked list"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-26"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/next-greater-node-in-linked-list" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Next greater node in linked list</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 26, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="add two numbers ii"
+                            data-categories="linked-list,stack"
+                            data-complexity="other"
+                            data-date="2022-11-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/add-two-numbers-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Add two numbers II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">linked-list</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/linked-list" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">linked list</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="sum of subarray minimums"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-25"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/sum-of-subarray-minimums" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Sum of subarray minimums</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 25, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="final prices with a special discount in a shop"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-23"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/final-prices-with-a-special-discount-in-a-shop" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Final prices with a special discount in a shop</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 23, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="odd-even-jump"
+                            data-categories="dynamic-programming,stack"
+                            data-complexity="linearithmic"
+                            data-date="2022-11-22"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/odd-even-jump" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">odd-even-jump</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">dynamic-programming</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/dynamic-programming" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">dynamic programming</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(nlog(n))</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 22, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="132 pattern"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-22"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/132-pattern" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">132 pattern</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 22, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximum frequency stack"
+                            data-categories="stack,design"
+                            data-complexity="unknown"
+                            data-date="2022-11-13"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximum-frequency-stack" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximum frequency stack</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">—</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 13, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="maximum nesting depth of the parentheses"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/maximum-nesting-depth-of-the-parentheses" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Maximum nesting depth of the parentheses</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove all adjacent duplicates in string ii"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-all-adjacent-duplicates-in-string-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove all adjacent duplicates in string II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove all adjacent duplicates in string"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-all-adjacent-duplicates-in-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove all adjacent duplicates in string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="score of parentheses"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-10"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/score-of-parentheses" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Score of parentheses</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 10, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="online stock span"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-09"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/online-stock-span" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Online stock span</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 9, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="make the string great"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-08"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/make-the-string-great" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Make the string great</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 8, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="next greater element ii"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/next-greater-element-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Next greater element II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="reverse vowels of a string"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-11-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/reverse-vowels-of-a-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Reverse vowels of a string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Nov 4, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="baseball game"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-10-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/baseball-game" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Baseball game</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="asteroid collision"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-10-03"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/asteroid-collision" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Asteroid collision</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Oct 3, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum insertions to balance a parentheses string"
+                            data-categories="stack,greedy"
+                            data-complexity="other"
+                            data-date="2022-09-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-insertions-to-balance-a-parentheses-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum insertions to balance a parentheses string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                            <span class="text-xs text-slate-400">greedy</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                            <a href="/categories/greedy" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">greedy</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 16, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="minimum number of swaps to make the string balanced"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-09"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/minimum-number-of-swaps-to-make-the-string-balanced" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Minimum number of swaps to make the string balanced</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 9, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="design a stack with increment operation"
+                            data-categories="design,stack"
+                            data-complexity="constant"
+                            data-date="2022-09-06"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/design-a-stack-with-increment-operation" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Design a stack with increment operation</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(1)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 6, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="basic calculator ii"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/basic-calculator-ii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Basic calculator II</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="basic calculator iii"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/basic-calculator-iii" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Basic calculator III</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="basic calculator"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/basic-calculator" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Basic calculator</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="longest absolute file path"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/longest-absolute-file-path" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Longest absolute file path</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove duplicate letters"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-05"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-duplicate-letters" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove duplicate letters</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 5, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="verify preorder serialization of a binary tree"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-04"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/verify-preorder-serialization-of-a-binary-tree" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Verify preorder serialization of a binary tree</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 4, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="decode string"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-09-03"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/decode-string" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Decode string</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Sep 3, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="simplify path"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-08-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/simplify-path" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Simplify path</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="validate stack sequences"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-08-28"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/validate-stack-sequences" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Validate stack sequences</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 28, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="remove k digits"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-08-27"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/remove-k-digits" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Remove k digits</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 27, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="next greater element i"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-08-14"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/next-greater-element-i" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Next greater element I</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n*m)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Aug 14, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="car fleet"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-07-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/car-fleet" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Car fleet</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="daily temperatures"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-07-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/daily-temperatures" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Daily temperatures</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="largest rectangle in histogram"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-07-30"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/largest-rectangle-in-histogram" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Largest rectangle in histogram</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 30, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="generate parentheses"
+                            data-categories="stack"
+                            data-complexity="exponential"
+                            data-date="2022-07-29"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/generate-parentheses" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Generate parentheses</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(2^n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 29, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="evaluate reverse polish notation"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-07-19"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/evaluate-reverse-polish-notation" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Evaluate reverse polish notation</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 19, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="min stack"
+                            data-categories="stack,design"
+                            data-complexity="other"
+                            data-date="2022-07-19"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/min-stack" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Min stack</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                            <span class="text-xs text-slate-400">design</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                            <a href="/categories/design" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">design</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n+n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 19, 2022</td>
+                        </tr>
+                                                                    <tr
+                            data-problem-row
+                            data-title="valid parentheses"
+                            data-categories="stack"
+                            data-complexity="other"
+                            data-date="2022-07-16"
+                            class="group hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                        >
+                            <td class="px-4 py-3.5 sm:px-5">
+                                <a href="https://one-problem-a-day.milon.im/problems/valid-parentheses" class="font-bold text-slate-900 no-underline group-hover:text-brand-600 dark:text-slate-100 dark:group-hover:text-blue-400">Valid parentheses</a>
+                                <div class="mt-1 flex flex-wrap gap-1 md:hidden">
+                                                                            <span class="text-xs text-slate-400">stack</span>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 md:table-cell">
+                                <div class="flex flex-wrap gap-1">
+                                                                            <a href="/categories/stack" class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 no-underline hover:bg-brand-100 hover:text-brand-700 dark:bg-slate-800 dark:text-slate-300">stack</a>
+                                                                    </div>
+                            </td>
+                            <td class="hidden px-4 py-3.5 font-mono text-xs text-slate-600 sm:table-cell dark:text-slate-400">O(n)</td>
+                            <td class="whitespace-nowrap px-4 py-3.5 text-right font-mono text-xs text-slate-400 sm:px-5">Jul 16, 2022</td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+        <div data-problem-empty class="hidden px-6 py-16 text-center">
+            <p class="font-bold text-slate-900 dark:text-white">No matching problems</p>
+            <p class="mt-1 text-sm text-slate-500">Try clearing one of the filters.</p>
+        </div>
+    </div>
+
+    <nav data-problem-pager class="mt-5 hidden flex-col items-center justify-between gap-4 sm:flex-row" aria-label="Problem index pagination">
+        <p data-pager-info class="text-sm text-slate-500"></p>
+
+        <div class="flex items-center gap-1">
+            <button type="button" data-pager-prev class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Previous</button>
+            <div data-pager-pages class="flex items-center gap-1"></div>
+            <button type="button" data-pager-next class="h-9 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-600 enabled:hover:bg-slate-100 disabled:opacity-40 dark:border-slate-800 dark:text-slate-300 dark:enabled:hover:bg-slate-900">Next</button>
+        </div>
+    </nav>
+</section>
+                </div>
+            </main>
+        </div>
+
+        <dialog
+    data-search-dialog
+    class="m-auto w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-0 text-left shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+>
+    <div class="flex items-center gap-3 border-b border-slate-200 px-4 dark:border-slate-800">
+        <svg class="size-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <label for="global-search" class="sr-only">Search problems</label>
+        <input
+            id="global-search"
+            data-search-input
+            type="search"
+            autocomplete="off"
+            placeholder="Search by title, category, or solution..."
+            class="h-16 min-w-0 flex-1 border-0 bg-transparent text-base text-slate-950 outline-none placeholder:text-slate-400 dark:text-white"
+        >
+        <button type="button" data-search-close class="rounded-md border border-slate-200 px-2 py-1 text-xs font-semibold text-slate-500 dark:border-slate-700 dark:text-slate-400">ESC</button>
+    </div>
+
+    <div data-search-results class="max-h-[60vh] overflow-y-auto p-2">
+        <div class="px-3 py-10 text-center text-sm text-slate-500">
+            Start typing to search all 944 problems.
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4 border-t border-slate-200 px-4 py-2 text-[11px] font-semibold text-slate-400 dark:border-slate-800">
+        <span><kbd class="font-mono">↑↓</kbd> Navigate</span>
+        <span><kbd class="font-mono">↵</kbd> Open</span>
+        <span class="ml-auto">Powered by Fuse.js</span>
+    </div>
+</dialog>
+
+        <script type="module" src="/assets/build/assets/main-C_qERKyv.js"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPNYL8WECN"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-DPNYL8WECN');
+            </script>
+                    </body>
+</html>
