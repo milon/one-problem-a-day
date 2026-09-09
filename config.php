@@ -2,9 +2,40 @@
 
 use Illuminate\Support\Str;
 
-$parseComplexity = function ($page) {
-    $content = preg_replace('/<br\s*\/?>/i', "\n", $page->getContent());
-    $content = html_entity_decode(strip_tags($content));
+$postMarkdownBody = function ($page) {
+    static $bodies = [];
+    static $files;
+
+    $filename = $page->getFilename();
+
+    if (array_key_exists($filename, $bodies)) {
+        return $bodies[$filename];
+    }
+
+    if ($files === null) {
+        $files = [];
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator(__DIR__.'/source/_posts', FilesystemIterator::SKIP_DOTS)
+        );
+
+        foreach ($iterator as $file) {
+            if ($file->isFile() && $file->getExtension() === 'md') {
+                $files[$file->getBasename('.md')] = $file->getPathname();
+            }
+        }
+    }
+
+    $raw = isset($files[$filename]) ? file_get_contents($files[$filename]) : '';
+
+    if (preg_match('/^---\R.*?\R---\R?/s', $raw, $matches)) {
+        $raw = substr($raw, strlen($matches[0]));
+    }
+
+    return $bodies[$filename] = $raw;
+};
+
+$parseComplexity = function ($page) use ($postMarkdownBody) {
+    $content = $postMarkdownBody($page);
 
     $extract = function (string $label) use ($content) {
         $bigO = 'O\((?:[^()\r\n]|\([^()\r\n]*\))*\)';
@@ -38,6 +69,21 @@ $parseComplexity = function ($page) {
     ];
 };
 
+$excerptFromMarkdown = function (string $markdown, int $length) {
+    $text = preg_replace('/```[\s\S]*?```/', ' ', $markdown);
+    $text = preg_replace('/^#{1,6}\s.*$/m', ' ', $text);
+    $text = preg_replace('/\[(.*?)\]\([^)]*\)/', '$1', $text);
+    $text = preg_replace('/<br\s*\/?>/i', ' ', $text);
+    $text = html_entity_decode(strip_tags($text));
+    $text = trim(preg_replace('/\s+/', ' ', $text));
+
+    if (strlen($text) <= $length) {
+        return $text;
+    }
+
+    return preg_replace('/\s+?(\S+)?$/', '', substr($text, 0, $length)).'...';
+};
+
 return [
     'baseUrl' => 'http://one-problem-a-day.test',
     'production' => false,
@@ -59,9 +105,19 @@ return [
             'path' => '/categories/{filename}',
             'sort' => '-date',
             'posts' => function ($page, $allPosts) {
-                return $allPosts->filter(function ($post) use ($page) {
-                    return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
-                });
+                static $byCategory;
+
+                if ($byCategory === null) {
+                    $byCategory = [];
+
+                    foreach ($allPosts as $post) {
+                        foreach ($post->categories ?? [] as $category) {
+                            $byCategory[$category][] = $post;
+                        }
+                    }
+                }
+
+                return collect($byCategory[$page->getFilename()] ?? []);
             },
         ],
     ],
@@ -77,49 +133,42 @@ return [
 
     // helpers
     'getDate' => function ($page) {
-        return Datetime::createFromFormat('U', $page->date);
+        static $dates = [];
+        $key = $page->getPath();
+
+        return $dates[$key] ??= Datetime::createFromFormat('U', $page->date);
     },
-    'getExcerpt' => function ($page, $length = 255) {
+    'getExcerpt' => function ($page, $length = 255) use ($postMarkdownBody, $excerptFromMarkdown) {
         if ($page->excerpt) {
             return $page->excerpt;
         }
 
-        $content = preg_split('/<!-- more -->/m', $page->getContent(), 2);
-        $cleaned = trim(
-            strip_tags(
-                preg_replace(['/<pre>[\w\W]*?<\/pre>/', '/<h\d>[\w\W]*?<\/h\d>/'], '', $content[0]),
-                '<code>'
-            )
-        );
+        static $excerpts = [];
+        $key = $page->getFilename().':'.$length;
 
-        if (count($content) > 1) {
-            return $cleaned;
-        }
-
-        $truncated = substr($cleaned, 0, $length);
-
-        if (substr_count($truncated, '<code>') > substr_count($truncated, '</code>')) {
-            $truncated .= '</code>';
-        }
-
-        return strlen($cleaned) > $length
-            ? preg_replace('/\s+?(\S+)?$/', '', $truncated) . '...'
-            : $cleaned;
+        return $excerpts[$key] ??= $excerptFromMarkdown($postMarkdownBody($page), $length);
     },
     'isActive' => function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
     'getComplexity' => function ($page) use ($parseComplexity) {
-        return $parseComplexity($page);
+        static $complexities = [];
+        $key = $page->getFilename();
+
+        return $complexities[$key] ??= $parseComplexity($page);
     },
     'viteAsset' => function ($page, $entry, $type = 'file') {
-        $manifestPath = __DIR__.'/source/assets/build/.vite/manifest.json';
+        static $manifest;
 
-        if (!file_exists($manifestPath)) {
-            throw new RuntimeException('Vite manifest not found. Run bun run build:assets first.');
+        if ($manifest === null) {
+            $manifestPath = __DIR__.'/source/assets/build/.vite/manifest.json';
+
+            if (!file_exists($manifestPath)) {
+                throw new RuntimeException('Vite manifest not found. Run bun run build:assets first.');
+            }
+
+            $manifest = json_decode(file_get_contents($manifestPath), true);
         }
-
-        $manifest = json_decode(file_get_contents($manifestPath), true);
 
         if (!isset($manifest[$entry]['file'])) {
             throw new RuntimeException("Unable to find {$entry} in the Vite manifest.");
